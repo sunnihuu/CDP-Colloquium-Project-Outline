@@ -170,3 +170,8 @@ main {
     height: 300px;                    /* Reduce graph height for mobile */
   }
 }
+
+canvas {
+  display: block;
+  border: 1px solid #ddd;
+}
