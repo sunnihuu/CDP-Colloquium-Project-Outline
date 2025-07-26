@@ -120,65 +120,8 @@
     
     <!-- Community of practice section -->
     <div class="project-title">My Community of Practice</div>
-    <div class="section-content">
-      <p>Below are key precedent projects, tools, and organizations that have shaped the field of food systems mapping, foodprints, and spatial food infrastructure. They represent diverse approaches from policy to design, from GIS to environmental visualization.</p>
-
-<ul>
-  <li>
-    <strong><a href="https://foodprintnyc.org/" target="_blank">Foodprint NYC</a></strong> — by Nicola Twilley & Sarah Rich  
-    <br>Early attempt to map the "invisible landscape" of food infrastructure in New York City, combining speculative design with systems thinking.
-  </li>
-  
-  <li>
-    <strong><a href="https://emtech.aaschool.ac.uk/" target="_blank">Edible Infrastructures</a></strong> — AA EmTech Thesis  
-    <br>Architectural proposal turning infrastructure into productive edible systems, exploring hydroponics, vertical farming, and metabolic design.
-  </li>
-  
-  <li>
-    <strong><a href="https://cultivating-resilience.ca/nourishing-territories/" target="_blank">Nourishing Territories</a></strong> — Montréal Food System Mapping  
-    <br>GIS-based spatial analysis of food access, Indigenous food sovereignty, and community-based urban planning in Canada.
-  </li>
-  
-  <li>
-    <strong><a href="https://www.foodprint.org/" target="_blank">Foodprint.org</a></strong>  
-    <br>Non-profit organization focusing on environmental and ethical impacts of food. Promotes foodprint as a concept, provides educational content.
-  </li>
-  
-  <li>
-    <strong><a href="https://nycfoodpolicy.org/" target="_blank">NYC Food Policy Center</a></strong>  
-    <br>Researches urban food policy, sustainability, justice, and resilience. Notable projects include school meal programs, COVID response, and food access maps.
-  </li>
-  
-  <li>
-    <strong><a href="https://data.ourworldindata.org/environmental-impacts-of-food/" target="_blank">Our World in Data</a></strong>  
-    <br>Offers global food-related emissions, land use, and resource consumption data. Useful as parameters for NYC regional modeling.
-  </li>
-  
-  <li>
-    <strong><a href="https://www.fao.org/sustainable-food-systems/home/en/" target="_blank">FAO’s Foodprint Calculator</a></strong>  
-    <br>Provides baseline life-cycle data on food emissions and land impacts. Used for national and regional footprint calculations.
-  </li>
-  
-  <li>
-    <strong><a href="https://www.barillacfn.com/en/food_sustainability_index/" target="_blank">Barilla Center for Food & Nutrition – Food Sustainability Index</a></strong>  
-    <br>Evaluates cities/countries by food waste, footprint, and nutritional access metrics. Useful for comparative urban analysis.
-  </li>
-  
-  <li>
-    <strong><a href="https://coolfood.org/" target="_blank">Cool Food Pledge</a></strong> — by World Resources Institute (WRI)  
-    <br>Framework and LCA database to reduce food-related emissions. Offers detailed coefficients and footprint visual standards.
-  </li>
-  
-  <li>
-    <strong><a href="https://www.c40.org/reports/food-and-climate/" target="_blank">C40 Cities – Food and Climate Report</a></strong>  
-    <br>Urban climate governance network. The food report explores how cities like NYC can reduce food-based GHG emissions through policy and procurement.
-  </li>
-  
-  <li>
-    <strong><a href="https://insights.sustainability.google/" target="_blank">Google Environmental Insights Explorer</a></strong>  
-    <br>Though not food-specific, provides city-level carbon footprint mapping. Useful for visual inspiration and modeling urban emissions context.
-  </li>
-</ul>
+      <div class="section-content">
+        <svg id="graph"></svg>
     </div>
     
     <!-- Situated technology section -->
@@ -369,7 +312,8 @@
     
     
   </main>
-  <!-- Load our JavaScript file that creates the network graph -->
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="script.js"></script>
 </body>
 <!-- End of body - all visible content goes above this line -->
 </html>

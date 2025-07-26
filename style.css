@@ -175,3 +175,42 @@ canvas {
   display: block;
   border: 1px solid #ddd;
 }
+
+#graph {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  cursor: grab;
+}
+
+.node circle {
+  stroke: #fff;
+  stroke-width: 1.5px;
+}
+
+.link {
+  stroke: #999;
+  stroke-opacity: 0.6;
+  stroke-width: 1.5px;
+}
+
+.node text {
+  font-size: 12px;
+  user-select: none;
+}
+
+.tooltip {
+  position: absolute;
+  pointer-events: none;
+  background: rgba(0,0,0,0.7);
+  color: #fff;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 12px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  max-width: 250px;
+  line-height: 1.2em;
+  z-index: 10;
+  white-space: normal;
+}
