@@ -177,7 +177,7 @@ canvas {
 }
 
 #graph {
-  width: 100vw;
+  width: 80vw;
   height: 100vh;
   display: block;
   cursor: grab;

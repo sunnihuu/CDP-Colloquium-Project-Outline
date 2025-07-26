@@ -183,8 +183,8 @@ const g = svg.append("g");
 
 // 设置svg大小，比例可调
 function setSize() {
-  const width = window.innerWidth * 0.9;
-  const height = window.innerHeight * 0.8;
+  const width = window.innerWidth * 0.4;
+  const height = window.innerHeight * 0.5;
   svg.attr("width", width).attr("height", height);
   return { width, height };
 }
