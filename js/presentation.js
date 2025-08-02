@@ -35,6 +35,13 @@ Reveal.initialize({
     parallaxBackgroundHorizontal: 0,
     parallaxBackgroundVertical: 0,
 
+    // Better full screen handling
+    width: '100%',
+    height: '100%',
+    margin: 0.15,
+    minScale: 0.1,
+    maxScale: 3.0,
+    
     // Keyboard navigation
     keyboard: {
         13: 'next', // Enter key
@@ -43,22 +50,66 @@ Reveal.initialize({
         39: 'next', // Right arrow
         38: 'prev', // Up arrow
         40: 'next', // Down arrow
+        70: function() { toggleFullScreen(); }, // F key for fullscreen
     },
 
     // Learn about plugins: https://revealjs.com/plugins/
     plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
 
-    // Custom options
-    margin: 0.1,
-    minScale: 0.2,
-    maxScale: 2.0,
-    disableLayout: false,
-
     // On ready callback
     ready: function() {
         initializeIndexInteractions();
+        setupFullScreenHandling();
     }
 });
+
+// Full screen handling functions
+function toggleFullScreen() {
+    if (!document.fullscreenElement) {
+        document.documentElement.requestFullscreen().catch(err => {
+            console.log(`Error attempting to enable fullscreen: ${err.message}`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+function setupFullScreenHandling() {
+    // Listen for fullscreen changes
+    document.addEventListener('fullscreenchange', function() {
+        console.log('Fullscreen changed:', document.fullscreenElement ? 'Entered' : 'Exited');
+        
+        // Force Reveal.js to recalculate layout
+        setTimeout(function() {
+            Reveal.layout();
+            
+            // Also refresh image container if present
+            const imageContainer = document.getElementById('imageContainer');
+            if (imageContainer && document.fullscreenElement) {
+                // In fullscreen, make sure image container uses full viewport
+                imageContainer.style.width = '100vw';
+                imageContainer.style.height = '100vh';
+                imageContainer.style.position = 'fixed';
+                imageContainer.style.top = '0';
+                imageContainer.style.left = '0';
+            } else if (imageContainer && !document.fullscreenElement) {
+                // When exiting fullscreen, restore normal positioning
+                imageContainer.style.width = '100vw';
+                imageContainer.style.height = '100vh';
+                imageContainer.style.position = 'fixed';
+                imageContainer.style.top = '0';
+                imageContainer.style.left = '0';
+            }
+        }, 100);
+    });
+    
+    // Also listen for window resize (for manual fullscreen)
+    window.addEventListener('resize', function() {
+        setTimeout(function() {
+            Reveal.layout();
+        }, 100);
+    });
+}
 
 // Index page expand/collapse functionality
 function initializeIndexInteractions() {
@@ -251,8 +302,55 @@ function initializeImageInteractions() {
     resetButton.className = 'reset-btn';
     resetButton.id = 'resetZoom';
     resetButton.textContent = 'Reset';
+    resetButton.style.pointerEvents = 'auto';
+    
+    // Attach event listener directly to the button element
+    resetButton.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Reset button clicked - triggering reset');
+        resetZoom();
+    });
+    
+    // Also add mousedown event for better responsiveness
+    resetButton.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        console.log('Reset button mouse down');
+    });
+    
     imageContainer.appendChild(resetButton);
-    console.log('Reset button added to image container');
+    console.log('Reset button created and added:', resetButton);
+    console.log('Reset button in DOM:', document.getElementById('resetZoom'));
+    
+    // Function to update container dimensions for fullscreen
+    function updateContainerForFullscreen() {
+        if (imageContainer) {
+            const isFullscreen = document.fullscreenElement !== null;
+            console.log('Updating container for fullscreen:', isFullscreen);
+            
+            if (isFullscreen) {
+                imageContainer.style.width = '100vw';
+                imageContainer.style.height = '100vh';
+                imageContainer.style.position = 'fixed';
+                imageContainer.style.top = '0';
+                imageContainer.style.left = '0';
+                imageContainer.style.zIndex = '100';
+            } else {
+                imageContainer.style.width = '100vw';
+                imageContainer.style.height = '100vh';
+                imageContainer.style.position = 'fixed';
+                imageContainer.style.top = '0';
+                imageContainer.style.left = '0';
+                imageContainer.style.zIndex = '100';
+            }
+        }
+    }
+    
+    // Listen for fullscreen changes on this specific container
+    document.addEventListener('fullscreenchange', updateContainerForFullscreen);
+    document.addEventListener('webkitfullscreenchange', updateContainerForFullscreen);
+    document.addEventListener('mozfullscreenchange', updateContainerForFullscreen);
     
     // Update image transform
     function updateTransform() {
@@ -261,15 +359,24 @@ function initializeImageInteractions() {
     
     // Reset function for double-click and button
     function resetZoom() {
-        console.log('Reset function called');
+        console.log('Reset function called - current state:', { scale, translateX, translateY });
+        
+        // Reset all transform values
         scale = 1;
         translateX = 0;
         translateY = 0;
-        // Force update the transform immediately
+        
+        // Apply the reset transform immediately
         if (image) {
-            image.style.transform = `translate(0px, 0px) scale(1)`;
-            console.log('Image reset to original position and scale');
+            image.style.transform = 'translate(0px, 0px) scale(1)';
+            image.style.transformOrigin = 'center center';
+            console.log('Image reset applied - new transform:', image.style.transform);
+        } else {
+            console.error('Image element not found for reset');
         }
+        
+        // Also call updateTransform to ensure consistency
+        updateTransform();
     }
     
     // Mouse wheel zoom
@@ -329,20 +436,6 @@ function initializeImageInteractions() {
         e.preventDefault();
         endDrag();
     });
-    
-    // Reset button event listener
-    const resetBtn = document.getElementById('resetZoom');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            e.stopPropagation();
-            console.log('Reset button clicked');
-            resetZoom();
-        });
-        console.log('Reset button event listener attached');
-    } else {
-        console.log('Reset button not found');
-    }
     
     // Double-click to reset
     imageContainer.addEventListener('dblclick', resetZoom);
