@@ -82,24 +82,6 @@ function setupFullScreenHandling() {
         // Force Reveal.js to recalculate layout
         setTimeout(function() {
             Reveal.layout();
-            
-            // Also refresh image container if present
-            const imageContainer = document.getElementById('imageContainer');
-            if (imageContainer && document.fullscreenElement) {
-                // In fullscreen, make sure image container uses full viewport
-                imageContainer.style.width = '100vw';
-                imageContainer.style.height = '100vh';
-                imageContainer.style.position = 'fixed';
-                imageContainer.style.top = '0';
-                imageContainer.style.left = '0';
-            } else if (imageContainer && !document.fullscreenElement) {
-                // When exiting fullscreen, restore normal positioning
-                imageContainer.style.width = '100vw';
-                imageContainer.style.height = '100vh';
-                imageContainer.style.position = 'fixed';
-                imageContainer.style.top = '0';
-                imageContainer.style.left = '0';
-            }
         }, 100);
     });
     
@@ -294,37 +276,14 @@ function initializeImageInteractions() {
     let isDragging = false;
     let startX = 0;
     let startY = 0;
-    let lastTranslateX = 0;
-    let lastTranslateY = 0;
     
-    // Function to update container dimensions for fullscreen
-    function updateContainerForFullscreen() {
-        if (imageContainer) {
-            const isFullscreen = document.fullscreenElement !== null;
-            console.log('Updating container for fullscreen:', isFullscreen);
-            
-            if (isFullscreen) {
-                imageContainer.style.width = '100vw';
-                imageContainer.style.height = '100vh';
-                imageContainer.style.position = 'fixed';
-                imageContainer.style.top = '0';
-                imageContainer.style.left = '0';
-                imageContainer.style.zIndex = '100';
-            } else {
-                imageContainer.style.width = '100vw';
-                imageContainer.style.height = '100vh';
-                imageContainer.style.position = 'fixed';
-                imageContainer.style.top = '0';
-                imageContainer.style.left = '0';
-                imageContainer.style.zIndex = '100';
-            }
-        }
+    // Center the image initially
+    function centerImage() {
+        translateX = 0;
+        translateY = 0;
+        scale = 1;
+        updateTransform();
     }
-    
-    // Listen for fullscreen changes on this specific container
-    document.addEventListener('fullscreenchange', updateContainerForFullscreen);
-    document.addEventListener('webkitfullscreenchange', updateContainerForFullscreen);
-    document.addEventListener('mozfullscreenchange', updateContainerForFullscreen);
     
     // Update image transform
     function updateTransform() {
@@ -334,9 +293,25 @@ function initializeImageInteractions() {
     // Mouse wheel zoom
     imageContainer.addEventListener('wheel', function(e) {
         e.preventDefault();
+        const rect = imageContainer.getBoundingClientRect();
+        const offsetX = e.clientX - rect.left - rect.width / 2;
+        const offsetY = e.clientY - rect.top - rect.height / 2;
+        
         const delta = e.deltaY > 0 ? 0.9 : 1.1;
-        scale = Math.max(0.5, Math.min(5, scale * delta));
+        const newScale = Math.max(0.5, Math.min(5, scale * delta));
+        
+        // Zoom towards mouse position
+        translateX = translateX - offsetX * (newScale - scale) / scale;
+        translateY = translateY - offsetY * (newScale - scale) / scale;
+        scale = newScale;
+        
         updateTransform();
+    });
+    
+    // Double-click to reset zoom
+    imageContainer.addEventListener('dblclick', function(e) {
+        e.preventDefault();
+        centerImage();
     });
     
     // Touch/Mouse drag for panning
@@ -371,23 +346,30 @@ function initializeImageInteractions() {
     
     document.addEventListener('mouseup', endDrag);
     
-    // Touch events
+    // Touch events for mobile
     imageContainer.addEventListener('touchstart', function(e) {
         e.preventDefault();
-        const touch = e.touches[0];
-        startDrag(touch.clientX, touch.clientY);
+        if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            startDrag(touch.clientX, touch.clientY);
+        }
     });
     
     imageContainer.addEventListener('touchmove', function(e) {
         e.preventDefault();
-        const touch = e.touches[0];
-        drag(touch.clientX, touch.clientY);
+        if (e.touches.length === 1) {
+            const touch = e.touches[0];
+            drag(touch.clientX, touch.clientY);
+        }
     });
     
     imageContainer.addEventListener('touchend', function(e) {
         e.preventDefault();
         endDrag();
     });
+    
+    // Initialize with centered position
+    centerImage();
 }
 
 // Initialize image interactions when DOM is loaded
