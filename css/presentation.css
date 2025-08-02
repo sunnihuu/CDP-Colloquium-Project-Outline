@@ -1,37 +1,53 @@
-/* Presentation Styles - Title Slide Only */
+/* Clean Presentation Styles - Only Used Styles */
 
 /* Override body and html background */
 html, body {
+    background-color: #000000 !important;
+}
+
+/* Global slide styling - Applied to ALL slides */
+.reveal .slides section {
     background-color: #fff5db !important;
+    color: #296307 !important;
+    text-align: left !important;
 }
 
-.reveal {
-    background-color: #fff5db !important;
+/* Global typography - Applied to ALL slides */
+.reveal h1 {
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 55px !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
 }
 
-/* Override Reveal.js containers for full-screen image slides */
-.reveal .slides .image-slide ~ .reveal,
-.reveal .slides .image-slide ~ .reveal .slides {
-    margin: 0 !important;
-    padding: 0 !important;
+.reveal h2 {
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Noto Serif", serif !important;
+    font-size: 35px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    text-transform: none !important;
+    line-height: 1.3 !important;
+    margin-bottom: 25px !important;
 }
 
-.reveal .slides section.image-slide {
-    width: 100vw !important;
-    height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-    position: absolute !important;
-    top: 0 !important;
-    left: 0 !important;
+.reveal p {
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Noto Serif", serif !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
 }
 
-/* Force full viewport for image slides */
-body:has(.image-slide.present) .reveal {
-    margin: 0 !important;
-    padding: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
+.reveal em {
+    color: #296307 !important;
+    font-style: italic !important;
 }
 
 /* Title slide specific styling */
@@ -43,7 +59,6 @@ body:has(.image-slide.present) .reveal {
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
-    padding-left: 80px !important;
 }
 
 .reveal .title-slide .header-info {
@@ -72,9 +87,7 @@ body:has(.image-slide.present) .reveal {
     line-height: 1.1;
 }
 
-
-.reveal .title-slide p,
-.reveal .title-slide em {
+.reveal .title-slide h2 {
     color: #296307;
     text-align: left;
     margin-left: 0;
@@ -83,92 +96,6 @@ body:has(.image-slide.present) .reveal {
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
-}
-
-/* Global slide styling - Applied to ALL slides */
-.reveal .slides section {
-    background-color: #fff5db !important;
-    color: #296307 !important;
-    text-align: left !important;
-    padding: 40px !important;
-    padding-left: 80px !important;
-}
-
-/* Override padding for image slides */
-.reveal .slides section.image-slide {
-    padding: 0 !important;
-    margin: 0 !important;
-}
-
-/* Global typography - Applied to ALL slides */
-.reveal h1 {
-    color: #296307 !important;
-    text-align: left !important;
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    font-size: 55px !important;
-    font-weight: 700 !important;
-    text-transform: none !important;
-    line-height: 1.2 !important;
-    margin-bottom: 20px !important;
-}
-
-.reveal h2 {
-    color: #296307 !important;
-    text-align: left !important;
-    font-family: "Noto Serif", serif !important;
-    font-size: 35px !important;
-    font-weight: 300 !important;
-    font-style: italic !important;
-    text-transform: none !important;
-    line-height: 1.3 !important;
-    margin-bottom: 25px !important;
-}
-
-.reveal h3 {
-    color: #296307 !important;
-    text-align: left !important;
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    font-size: 24px !important;
-    font-weight: 500 !important;
-    text-transform: none !important;
-    line-height: 1.3 !important;
-    margin-bottom: 15px !important;
-}
-
-.reveal p {
-    color: #296307 !important;
-    text-align: left !important;
-    font-family: "Noto Serif", serif !important;
-    font-size: 18px !important;
-    font-weight: 400 !important;
-    line-height: 1.4 !important;
-    margin-bottom: 15px !important;
-}
-
-.reveal ul,
-.reveal ol {
-    color: #296307 !important;
-    font-family: "Noto Serif", serif !important;
-    font-size: 18px !important;
-    font-weight: 400 !important;
-    line-height: 1.5 !important;
-    text-align: left !important;
-}
-
-.reveal li {
-    color: #296307 !important;
-    margin-bottom: 8px !important;
-}
-
-.reveal strong,
-.reveal b {
-    color: #296307 !important;
-    font-weight: 600 !important;
-}
-
-.reveal em {
-    color: #296307 !important;
-    font-style: italic !important;
 }
 
 /* Index page specific styling */
@@ -254,153 +181,7 @@ body:has(.image-slide.present) .reveal {
     font-size: 15px;
 }
 
-/* OEC Precedent Study Styling */
-.reveal .oec-study {
-    padding: 30px 40px !important;
-}
-
-.reveal .oec-study .oec-content {
-    display: flex;
-    flex-direction: column;
-    gap: 25px;
-}
-
-.reveal .oec-study .oec-overview {
-    margin-bottom: 20px;
-}
-
-.reveal .oec-study .oec-overview h3 {
-    color: #296307 !important;
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    font-size: 28px !important;
-    font-weight: 600 !important;
-    margin-bottom: 8px !important;
-}
-
-.reveal .oec-study .oec-layout {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: start;
-}
-
-.reveal .oec-study .oec-text h3 {
-    color: #296307 !important;
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    font-size: 22px !important;
-    font-weight: 500 !important;
-    margin-bottom: 15px !important;
-    margin-top: 25px !important;
-}
-
-.reveal .oec-study .oec-text h3:first-child {
-    margin-top: 0 !important;
-}
-
-.reveal .oec-study .oec-bullets,
-.reveal .oec-study .oec-applications {
-    list-style: none !important;
-    padding-left: 0 !important;
-    margin-bottom: 25px !important;
-}
-
-.reveal .oec-study .oec-bullets li,
-.reveal .oec-study .oec-applications li {
-    color: #296307 !important;
-    font-family: "Noto Serif", serif !important;
-    font-size: 16px !important;
-    font-weight: 400 !important;
-    line-height: 1.4 !important;
-    margin-bottom: 12px !important;
-    padding-left: 20px !important;
-    position: relative;
-}
-
-.reveal .oec-study .oec-bullets li::before {
-    content: "•";
-    color: #296307;
-    font-size: 18px;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.reveal .oec-study .oec-applications li::before {
-    content: "→";
-    color: #296307;
-    font-size: 16px;
-    font-weight: bold;
-    position: absolute;
-    left: 0;
-    top: 0;
-}
-
-.reveal .oec-study .oec-images {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-.reveal .oec-study .image-placeholder {
-    width: 100%;
-}
-
-.reveal .oec-study .image-box {
-    width: 100%;
-    height: 120px;
-    background-color: #f0f8f0;
-    border: 2px dashed #296307;
-    border-radius: 6px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: 8px;
-    transition: all 0.3s ease;
-}
-
-.reveal .oec-study .image-box:hover {
-    background-color: #e8f5e8;
-    border-color: #1a4004;
-}
-
-.reveal .oec-study .image-box span {
-    color: #296307;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 14px;
-    font-weight: 500;
-    text-align: center;
-}
-
-.reveal .oec-study .image-caption {
-    color: #296307 !important;
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    font-size: 13px !important;
-    font-weight: 400 !important;
-    font-style: italic !important;
-    text-align: center !important;
-    margin: 0 !important;
-    line-height: 1.3 !important;
-}
-
-/* Responsive adjustments for OEC section */
-@media (max-width: 1024px) {
-    .reveal .oec-study .oec-layout {
-        grid-template-columns: 1fr;
-        gap: 30px;
-    }
-    
-    .reveal .oec-study .oec-images {
-        flex-direction: row;
-        flex-wrap: wrap;
-    }
-    
-    .reveal .oec-study .image-placeholder {
-        width: calc(50% - 10px);
-    }
-}
-
-/* Interactive Image Slide Styling */
+/* Image slide styling */
 .reveal .image-slide {
     background-color: #fff5db !important;
     padding: 0 !important;
@@ -410,19 +191,14 @@ body:has(.image-slide.present) .reveal {
     height: 100% !important;
 }
 
-/* Override all Reveal.js containers for image slides */
-.reveal .slides .image-slide {
-    padding: 0 !important;
+.reveal .slides section.image-slide {
+    width: 100vw !important;
+    height: 100vh !important;
     margin: 0 !important;
+    padding: 0 !important;
+    position: absolute !important;
     top: 0 !important;
     left: 0 !important;
-    width: 100% !important;
-    height: 100% !important;
-}
-
-.reveal .slides {
-    width: 100% !important;
-    height: 100% !important;
 }
 
 .reveal .image-slide .image-container {
@@ -448,97 +224,12 @@ body:has(.image-slide.present) .reveal {
     cursor: grabbing;
 }
 
-/* PDF object styling */
 .reveal .image-slide .zoomable-image {
     max-width: 100%;
     max-height: 100%;
-    width: 100%;
-    height: 100%;
+    width: auto;
+    height: auto;
     object-fit: contain;
     transition: transform 0.3s ease;
     transform-origin: center center;
-    pointer-events: auto;
-    user-select: none;
-    border: none;
 }
-
-/* Fallback text styling for unsupported browsers */
-.reveal .image-slide .zoomable-image p {
-    color: #296307 !important;
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    font-size: 18px !important;
-    text-align: center !important;
-}
-
-.reveal .image-slide .zoomable-image a {
-    color: #296307 !important;
-    text-decoration: underline !important;
-}
-
-/* Reset button styling */
-.reset-btn {
-    position: absolute;
-    top: 20px;
-    left: 20px;
-    width: 40px;
-    height: 40px;
-    border: 1.5px solid #296307;
-    border-radius: 50%;
-    background-color: transparent;
-    color: #296307;
-    font-size: 12px;
-    font-weight: 600;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transition: all 0.3s ease;
-    z-index: 1001;
-    pointer-events: auto;
-    user-select: none;
-}
-
-.reset-btn:hover {
-    background-color: #296307;
-    color: #fff5db;
-    transform: scale(1.1);
-}
-
-/* Fullscreen mode adjustments */
-:fullscreen .reveal,
-:-webkit-full-screen .reveal,
-:-moz-full-screen .reveal {
-    width: 100vw !important;
-    height: 100vh !important;
-    margin: 0 !important;
-    padding: 0 !important;
-}
-
-:fullscreen .reveal .slides,
-:-webkit-full-screen .reveal .slides,
-:-moz-full-screen .reveal .slides {
-    width: 100vw !important;
-    height: 100vh !important;
-}
-
-:fullscreen .reveal .image-slide .image-container,
-:-webkit-full-screen .reveal .image-slide .image-container,
-:-moz-full-screen .reveal .image-slide .image-container {
-    width: 100vw !important;
-    height: 100vh !important;
-    position: fixed !important;
-    top: 0 !important;
-    left: 0 !important;
-    z-index: 100 !important;
-}
-
-/* Prevent any cropping in fullscreen */
-:fullscreen body,
-:-webkit-full-screen body,
-:-moz-full-screen body {
-    margin: 0 !important;
-    padding: 0 !important;
-    overflow: hidden !important;
-}
-

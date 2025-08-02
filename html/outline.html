@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<!-- This tells the browser this is an HTML5 document -->
+<html lang="en">
+<!-- The html tag is the root element that contains everything on the page -->
+<!-- lang="en" tells the browser this page is in English -->
+
+<head>
+  <!-- The head section contains information about the page, not visible content -->
+  
+  <!-- Load D3.js library from CDN (Content Delivery Network) -->
+  <!-- D3.js is a JavaScript library for creating data visualizations -->
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  
+  <!-- Set the character encoding to UTF-8 (supports special characters and emojis) -->
+  <meta charset="UTF-8">
+  
+  <!-- This is the title that appears in the browser tab -->
+  <title>Computational Design Practices</title>
+  
+  <!-- Load the Roboto font from Google Fonts for use on our page -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  
+  <!-- Link our CSS file to style the page -->
+  <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+  <!-- The body contains all the visible content that users will see on the page -->
+  
+  <!-- Header section at the top of the page -->
+  <header>
+    <!-- Left side of header - institution name -->
+    <div class="left">Columbia GSAPP</div>
+    
+    <!-- Center of header - main title and subtitle -->
+    <div class="center">
+      Computational Design Practices<br>
+      <!-- <br> creates a line break, moving the next text to a new line -->
+      <span>Colloquium 1 Summer 2025</span>
+      <!-- span is an inline element that groups text without creating a new line -->
+    </div>
+    
+    <!-- Right side of header - student name -->
+    <div class="right">Sunni Hu</div>
+  </header>
+
+  <!-- Main content area -->
+  <main>
+    <!-- Main title of the research project -->
+    <div class="project-title-main">Mapping NYC Foodprint</div>
+
+    <!-- Research question section -->
+    <div class="project-title">Research question(s)</div>
+    <div class="section-content">
+      <ul>
+        <li>What invisible infrastructures shape the urban metabolism of food?</li>
+        <li>How do food footprints reflect global extractivism in local urban space?</li>
+        <li>Who benefits from the city's food system—and who is excluded?</li>
+        <li>How can computational design become a tool for intervention, not just representation?</li>
+      </ul>
+    </div>
+    
+    <!-- Keywords section -->
+    <div class="project-title">Keywords (6)</div>
+    <div class="section-content">
+      <ul>
+        <li>Foodprint</li>
+        <li>Urban Metabolism</li>
+        <li>Infrastructural Invisibility</li>
+        <li>Global Extractivism</li>
+        <li>Spatial Justice</li>
+        <li>Food Urbanism</li>
+      </ul>
+    </div>
+    
+    <!-- Intersecting fields section -->
+    <div class="project-title">3 Intersecting Fields</div>
+    <div class="section-content">
+      <ul>
+        <li>Urban Data Ecology</li>
+        <li>Urban Equity</li>
+        <li>Spatial Design</li>
+      </ul>
+    </div>
+    
+    <!-- Historical lineage section -->
+    <div class="project-title">Historical Lineage</div>
+    <div class="section-content" >
+    <p>
+    This project emerges from the intersection of <strong>urban data practices</strong>, 
+    <strong>food justice movements</strong>, and <strong>design as inquiry</strong>. 
+    It builds on traditions of using spatial tools, particularly GIS and footprint modeling, 
+    to make hidden infrastructures visible and to expose the social and environmental costs embedded in everyday systems.
+    </p>
+
+    <p>
+      The focus lies on the urban <strong>food system</strong> and its associated <strong>foodprint</strong>:
+      the carbon, water, and land impacts of food production, distribution, access, and waste. 
+      These impacts are often invisible, yet spatially distributed and systemically produced. 
+      Mapping them becomes a way to uncover how environmental burdens and urban inequalities are intertwined.
+    </p>
+
+    <p>
+      This project will follow a lineage of <em>critical cartography</em> and <em>urban political ecology</em>, 
+      where maps are not neutral representations but tools to question, interpret, and intervene. 
+      The project draws from frameworks such as <strong>critical infrastructure studies</strong>, 
+      <strong>food sovereignty</strong>, and <strong>urban metabolism</strong>, while aligning with 
+      contemporary design approaches including <em>ecological data visualization</em> and 
+      <em>community-centered urban prototyping</em>. It continues a trajectory of data-driven urbanism, 
+      where making the invisible visible becomes a first step toward more just and embodied futures.
+    </p>
+    </div>
+    
+    <!-- Community of practice section -->
+    <div class="project-title">My Community of Practice</div>
+    <div class="section-content">
+      <p>Below are key precedent projects, tools, and organizations that have shaped the field of food systems mapping, foodprints, and spatial food infrastructure. They represent diverse approaches from policy to design, from GIS to environmental visualization.</p>
+
+<ul>
+  <li>
+    <strong><a href="https://foodprintnyc.org/" target="_blank">Foodprint NYC</a></strong> — by Nicola Twilley & Sarah Rich  
+    <br>Early attempt to map the "invisible landscape" of food infrastructure in New York City, combining speculative design with systems thinking.
+  </li>
+  
+  <li>
+    <strong><a href="https://emtech.aaschool.ac.uk/" target="_blank">Edible Infrastructures</a></strong> — AA EmTech Thesis  
+    <br>Architectural proposal turning infrastructure into productive edible systems, exploring hydroponics, vertical farming, and metabolic design.
+  </li>
+  
+  <li>
+    <strong><a href="https://cultivating-resilience.ca/nourishing-territories/" target="_blank">Nourishing Territories</a></strong> — Montréal Food System Mapping  
+    <br>GIS-based spatial analysis of food access, Indigenous food sovereignty, and community-based urban planning in Canada.
+  </li>
+  
+  <li>
+    <strong><a href="https://www.foodprint.org/" target="_blank">Foodprint.org</a></strong>  
+    <br>Non-profit organization focusing on environmental and ethical impacts of food. Promotes foodprint as a concept, provides educational content.
+  </li>
+  
+  <li>
+    <strong><a href="https://nycfoodpolicy.org/" target="_blank">NYC Food Policy Center</a></strong>  
+    <br>Researches urban food policy, sustainability, justice, and resilience. Notable projects include school meal programs, COVID response, and food access maps.
+  </li>
+  
+  <li>
+    <strong><a href="https://data.ourworldindata.org/environmental-impacts-of-food/" target="_blank">Our World in Data</a></strong>  
+    <br>Offers global food-related emissions, land use, and resource consumption data. Useful as parameters for NYC regional modeling.
+  </li>
+  
+  <li>
+    <strong><a href="https://www.fao.org/sustainable-food-systems/home/en/" target="_blank">FAO's Foodprint Calculator</a></strong>  
+    <br>Provides baseline life-cycle data on food emissions and land impacts. Used for national and regional footprint calculations.
+  </li>
+  
+  <li>
+    <strong><a href="https://www.barillacfn.com/en/food_sustainability_index/" target="_blank">Barilla Center for Food & Nutrition – Food Sustainability Index</a></strong>  
+    <br>Evaluates cities/countries by food waste, footprint, and nutritional access metrics. Useful for comparative urban analysis.
+  </li>
+  
+  <li>
+    <strong><a href="https://coolfood.org/" target="_blank">Cool Food Pledge</a></strong> — by World Resources Institute (WRI)  
+    <br>Framework and LCA database to reduce food-related emissions. Offers detailed coefficients and footprint visual standards.
+  </li>
+  
+  <li>
+    <strong><a href="https://www.c40.org/reports/food-and-climate/" target="_blank">C40 Cities – Food and Climate Report</a></strong>  
+    <br>Urban climate governance network. The food report explores how cities like NYC can reduce food-based GHG emissions through policy and procurement.
+  </li>
+  
+  <li>
+    <strong><a href="https://insights.sustainability.google/" target="_blank">Google Environmental Insights Explorer</a></strong>  
+    <br>Though not food-specific, provides city-level carbon footprint mapping. Useful for visual inspiration and modeling urban emissions context.
+  </li>
+</ul>
+    </div>
+    
+    <!-- Situated technology section -->
+    <div class="project-title">Situated Technology</div>
+    <div class="section-content">
+      
+  <ul>
+    <li>
+      <strong>Contextual Mapping:</strong> Uses mapping as a tool to uncover food migration and urban inequalities.
+    </li>
+    <li>
+      <strong>Critical Cartography:</strong> Inspired by CDP themes—maps not just as representations, but as political and cultural interfaces.
+    </li>
+    <li>
+      <strong>Data + Narrative:</strong> Combines GIS, food supply data, and oral histories to create hybrid spatial stories.
+    </li>
+    <li>
+      <strong>Qualitative + Quantitative:</strong> Merges community interviews with migration and food accessibility metrics.
+    </li>
+    <li>
+      <strong>Situated Computation:</strong> Technologies are embedded in social, cultural, and ecological contexts—not neutral tools.
+    </li>
+    <li>
+      <strong>Urban Justice Lens:</strong> Investigates who gets access to which foods, where, and why.
+    </li>
+    <li>
+      <strong>Web Interface:</strong> Interactive, layered storytelling online—food journeys as both personal and systemic.
+    </li>
+    <li>
+      <strong>Design as Exposure:</strong> Makes visible the infrastructures of trade, labor, and environmental cost behind everyday meals.
+    </li>
+  </ul>
+    </div>
+    
+    <!-- Methods section -->
+    <div class="project-title">Methods</div>
+    <div class="section-content">
+      <ul>
+        <li><strong>Computational:</strong> GIS mapping, web development, data processing</li>
+        <li><strong>Aesthetic:</strong> Visual storytelling, food cartographies, cultural overlays</li>
+        <li><strong>Written:</strong> Food history narratives, metadata framing, explanatory text</li>
+        <li><strong>Material:</strong> Optional zine or edible material component in final exhibit</li>
+      </ul>
+    </div>
+    
+    <!-- Computational design experiments section -->
+    <div class="project-title">Computational Design Experiments</div>
+    <div class="section-content">
+      222
+    </div>
+    
+    <!-- Network Graph Visualization - this is a subsection under Computational Design Experiments -->
+    <div class="project-title-subsection">Network Graph Visualization</div>
+    <!-- This div will contain the interactive network graph created by JavaScript -->
+    <div id="d3-container-2"></div>
+    
+    <!-- Visual representation section -->
+    <div class="project-title">Visual Representation</div>
+    <div class="section-content">
+      <ul>
+  <li>
+    <strong>Layered Cartography:</strong> Combining migration routes, urban food environments, and demographic overlays.<br>
+    <a href="https://www.datapolitan.com/work/nyc-food-metrics-report" target="_blank">NYC Food Metrics Report (Datapolitan)</a>
+  </li>
+
+  <li>
+    <strong>Interactive Web Maps:</strong> Responsive maps for user-led exploration and storytelling of food migration.<br>
+    <a href="https://bostonography.com/" target="_blank">Bostonography: Mapping Urban Patterns</a>
+  </li>
+
+  <li>
+    <strong>Data-Driven Narratives:</strong> Using animation, timelines, and dynamic graphs to make invisible flows visible.<br>
+    <a href="https://www.oec.world/en" target="_blank">Observatory of Economic Complexity</a>
+  </li>
+
+  <li>
+    <strong>Hybrid Aesthetics:</strong> Mixing digital interfaces with material gestures (e.g., food packaging textures, community recipe zines).<br>
+    <a href="https://www.centerforbookarts.org/" target="_blank">Center for Book Arts</a> — inspiration for physical formats.
+  </li>
+
+  <li>
+    <strong>Speculative Interfaces:</strong> Prototyping new ways of seeing food infrastructures through UI/UX experiments.<br>
+    <a href="https://muckpetrol.com/projects/fantasy-ui/" target="_blank">Fantasy UI (by MuckPetrol)</a>
+  </li>
+</ul>
+    </div>
+    
+    <!-- Rhetorical argument section -->
+    <div class="project-title">Rhetorical Argument</div>
+    <div class="section-content">
+      <p>
+    This project argues that the true infrastructures of urban food systems are largely invisible, 
+    yet they profoundly shape environmental outcomes, social inequalities, and cultural identities. 
+    By making these hidden dynamics visible through mapping and design, we can challenge dominant narratives 
+    that treat food as a neutral commodity and instead reveal the complex networks of labor, migration, 
+    and ecological impact behind what we eat.  
+  </p>
+  <p>
+    The project contends that understanding the "foodprint" is not only a matter of calculating carbon or water use, 
+    but also of recognizing how spatial justice, cultural memory, and community agency are embedded in food flows. 
+    Design here becomes a form of activism: a call to reimagine food infrastructures as equitable, legible, and edible, 
+    inviting new possibilities for urban sustainability and justice.
+  </p>
+    </div>
+    
+    <!-- Capstone project outline section -->
+    <div class="project-title">Brief Outline of a Potential Capstone Project</div>
+    <div class="section-content"><ul>
+    <li>
+      <strong>Project Focus:</strong>
+      <ul>
+        <li>Deepen investigation of NYC's urban food system and its environmental foodprint.</li>
+        <li>Integrate geospatial data with community narratives to reveal hidden food flows and environmental burdens.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Research Methods:</strong>
+      <ul>
+        <li>Continue GIS spatial analysis incorporating carbon, water, and land footprint data.</li>
+        <li>Conduct qualitative interviews and oral histories to capture immigrant food cultures.</li>
+        <li>Develop multi-layered, interactive visualizations combining data and storytelling.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Key Questions:</strong>
+      <ul>
+        <li>How do food access and environmental impacts vary across different communities?</li>
+        <li>How do food migration paths reflect cultural, economic, and ecological intersections?</li>
+        <li>How can design increase transparency and equity within food systems?</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Project Outputs:</strong>
+      <ul>
+        <li>Web-based interactive mapping platform showcasing food flows, footprints, and community stories.</li>
+        <li>Dynamic data visualizations revealing key nodes and hidden relations in the food system.</li>
+        <li>Design prototypes such as a low-carbon food navigation app or interactive models of community food infrastructures.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Project Approach:</strong>
+      <ul>
+        <li>Maintain an open exploratory stance without fixed solutions at this stage.</li>
+        <li>Use design as a mode of inquiry and dialogue to provoke reflection on complex systems.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Engagement and Impact:</strong>
+      <ul>
+        <li>Provide accessible tools and visuals for community members, designers, and policymakers.</li>
+        <li>Facilitate public conversations about food justice and environmental sustainability.</li>
+        <li>Lay groundwork for future design interventions and policy recommendations.</li>
+      </ul>
+    </li>
+  </ul>
+</div>
+    
+    <!-- The challenge section -->
+    <div class="project-title">The Challenge</div>
+    <div class="section-content">ul>
+    <li>
+      <strong>Data Accessibility:</strong> 
+      Food migration and distribution datasets are fragmented and often inconsistent across different cities or agencies.
+      <br><em>Plan:</em> Compile data from public sources (NYC Open Data, USDA, UN FAO) and consider qualitative supplements via interviews or community mapping.
+    </li>
+    <li>
+      <strong>Technical Learning Curve:</strong> 
+      Need to improve advanced data visualization (D3.js), GIS analytics, and API integrations.
+      <br><em>Plan:</em> Complete targeted tutorials, use small weekly prototypes, and consult peers with stronger dev backgrounds.
+    </li>
+    <li>
+      <strong>Visual Communication:</strong> 
+      Crafting a clear and engaging aesthetic that supports argumentation while handling complex multi-layer data.
+      <br><em>Plan:</em> Reference best practices from <a href="https://www.datasketch.es" target="_blank">Datasketch</a>, <a href="https://polygraph.cool" target="_blank">Polygraph</a>, and <a href="https://pudding.cool" target="_blank">The Pudding</a>.
+    </li>
+    <li>
+      <strong>Community Relationships:</strong> 
+      Grounding the work in lived experience requires trust-building with cultural communities and food practitioners.
+      <br><em>Plan:</em> Reach out to local mutual aid groups, urban gardens, or food policy councils in NYC neighborhoods.
+    </li>
+    <li>
+      <strong>Scope & Focus:</strong> 
+      Balancing scale (global migration vs. hyperlocal mapping) without losing coherence.
+      <br><em>Plan:</em> Prioritize one core migration case (e.g. the journey of rice or chili pepper) to anchor the interface and argument.
+    </li>
+  </ul>
+</div>
+    
+    
+  </main>
+<script src="../timeline.js"></script>
+  <!-- Load our JavaScript file that creates the network graph -->
+</body>
+<!-- End of body - all visible content goes above this line -->
+</html>

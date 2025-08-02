@@ -297,32 +297,6 @@ function initializeImageInteractions() {
     let lastTranslateX = 0;
     let lastTranslateY = 0;
     
-    // Add reset button
-    const resetButton = document.createElement('button');
-    resetButton.className = 'reset-btn';
-    resetButton.id = 'resetZoom';
-    resetButton.textContent = 'Reset';
-    resetButton.style.pointerEvents = 'auto';
-    
-    // Attach event listener directly to the button element
-    resetButton.addEventListener('click', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Reset button clicked - triggering reset');
-        resetZoom();
-    });
-    
-    // Also add mousedown event for better responsiveness
-    resetButton.addEventListener('mousedown', function(e) {
-        e.preventDefault();
-        e.stopPropagation();
-        console.log('Reset button mouse down');
-    });
-    
-    imageContainer.appendChild(resetButton);
-    console.log('Reset button created and added:', resetButton);
-    console.log('Reset button in DOM:', document.getElementById('resetZoom'));
-    
     // Function to update container dimensions for fullscreen
     function updateContainerForFullscreen() {
         if (imageContainer) {
@@ -355,28 +329,6 @@ function initializeImageInteractions() {
     // Update image transform
     function updateTransform() {
         image.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
-    }
-    
-    // Reset function for double-click and button
-    function resetZoom() {
-        console.log('Reset function called - current state:', { scale, translateX, translateY });
-        
-        // Reset all transform values
-        scale = 1;
-        translateX = 0;
-        translateY = 0;
-        
-        // Apply the reset transform immediately
-        if (image) {
-            image.style.transform = 'translate(0px, 0px) scale(1)';
-            image.style.transformOrigin = 'center center';
-            console.log('Image reset applied - new transform:', image.style.transform);
-        } else {
-            console.error('Image element not found for reset');
-        }
-        
-        // Also call updateTransform to ensure consistency
-        updateTransform();
     }
     
     // Mouse wheel zoom
@@ -436,15 +388,14 @@ function initializeImageInteractions() {
         e.preventDefault();
         endDrag();
     });
-    
-    // Double-click to reset
-    imageContainer.addEventListener('dblclick', resetZoom);
 }
 
 // Initialize image interactions when DOM is loaded
 document.addEventListener('DOMContentLoaded', function() {
     // Wait for image to load
     setTimeout(initializeImageInteractions, 500);
+    // Initialize popup gallery
+    setTimeout(initializePopupGallery, 500);
 });
 
 // Also initialize when slide changes
@@ -452,4 +403,100 @@ Reveal.on('slidechanged', function(event) {
     if (event.currentSlide.querySelector('#imageContainer')) {
         setTimeout(initializeImageInteractions, 100);
     }
+    if (event.currentSlide.querySelector('.popup-gallery')) {
+        setTimeout(initializePopupGallery, 100);
+    }
 });
+
+// Image Modal Popup Functionality
+function createImageModal(imageSrc, caption) {
+    const modal = document.createElement('div');
+    modal.style.cssText = `
+        position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+        background: rgba(0,0,0,0.9); display: flex; align-items: center;
+        justify-content: center; z-index: 9999; cursor: pointer;
+        animation: fadeIn 0.3s ease;
+    `;
+    
+    const img = document.createElement('img');
+    img.src = imageSrc;
+    img.style.cssText = `
+        max-width: 90%; max-height: 90%; object-fit: contain;
+        border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        transition: transform 0.3s ease;
+    `;
+    
+    // Add caption if provided
+    if (caption) {
+        const captionDiv = document.createElement('div');
+        captionDiv.textContent = caption;
+        captionDiv.style.cssText = `
+            position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%);
+            color: white; font-size: 18px; text-align: center;
+            background: rgba(0,0,0,0.7); padding: 10px 20px; border-radius: 5px;
+        `;
+        modal.appendChild(captionDiv);
+    }
+    
+    // Close button
+    const closeBtn = document.createElement('div');
+    closeBtn.innerHTML = '×';
+    closeBtn.style.cssText = `
+        position: absolute; top: 20px; right: 30px; color: white;
+        font-size: 40px; cursor: pointer; z-index: 10000;
+        transition: color 0.3s ease;
+    `;
+    closeBtn.onmouseover = () => closeBtn.style.color = '#ccc';
+    closeBtn.onmouseout = () => closeBtn.style.color = 'white';
+    
+    modal.appendChild(img);
+    modal.appendChild(closeBtn);
+    
+    // Close modal when clicking anywhere or close button
+    modal.onclick = () => modal.remove();
+    closeBtn.onclick = () => modal.remove();
+    
+    // Prevent image click from closing modal
+    img.onclick = (e) => e.stopPropagation();
+    
+    document.body.appendChild(modal);
+    
+    // Add fade-in animation styles
+    const style = document.createElement('style');
+    style.textContent = `
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+    `;
+    if (!document.querySelector('style[data-modal-styles]')) {
+        style.setAttribute('data-modal-styles', 'true');
+        document.head.appendChild(style);
+    }
+}
+
+// Initialize popup gallery functionality
+function initializePopupGallery() {
+    const galleryImages = document.querySelectorAll('.popup-gallery img');
+    
+    galleryImages.forEach(img => {
+        img.addEventListener('click', function() {
+            const caption = this.getAttribute('alt') || this.getAttribute('data-caption');
+            createImageModal(this.src, caption);
+        });
+        
+        // Add hover effect
+        img.style.cursor = 'pointer';
+        img.style.transition = 'transform 0.3s ease, box-shadow 0.3s ease';
+        
+        img.addEventListener('mouseenter', function() {
+            this.style.transform = 'scale(1.05)';
+            this.style.boxShadow = '0 4px 15px rgba(0,0,0,0.3)';
+        });
+        
+        img.addEventListener('mouseleave', function() {
+            this.style.transform = 'scale(1)';
+            this.style.boxShadow = '0 2px 8px rgba(0,0,0,0.1)';
+        });
+    });
+}
