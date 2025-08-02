@@ -223,3 +223,117 @@ Reveal.on('overviewhidden', function() {
         document.body.style.cursor = 'none';
     }, 3000);
 });
+
+// Interactive Image Pan & Zoom Functionality
+function initializeImageInteractions() {
+    const imageContainer = document.getElementById('imageContainer');
+    const image = document.getElementById('precedentImage');
+    
+    if (!imageContainer || !image) return;
+    
+    let scale = 1;
+    let translateX = 0;
+    let translateY = 0;
+    let isDragging = false;
+    let startX = 0;
+    let startY = 0;
+    let lastTranslateX = 0;
+    let lastTranslateY = 0;
+    
+    // Add reset button
+    const resetButton = document.createElement('button');
+    resetButton.className = 'reset-btn';
+    resetButton.id = 'resetZoom';
+    resetButton.textContent = 'Reset';
+    imageContainer.appendChild(resetButton);
+    
+    // Update image transform
+    function updateTransform() {
+        image.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
+    }
+    
+    // Reset function for double-click
+    function resetZoom() {
+        scale = 1;
+        translateX = 0;
+        translateY = 0;
+        updateTransform();
+    }
+    
+    // Mouse wheel zoom
+    imageContainer.addEventListener('wheel', function(e) {
+        e.preventDefault();
+        const delta = e.deltaY > 0 ? 0.9 : 1.1;
+        scale = Math.max(0.5, Math.min(5, scale * delta));
+        updateTransform();
+    });
+    
+    // Touch/Mouse drag for panning
+    function startDrag(clientX, clientY) {
+        isDragging = true;
+        startX = clientX - translateX;
+        startY = clientY - translateY;
+        imageContainer.style.cursor = 'grabbing';
+    }
+    
+    function drag(clientX, clientY) {
+        if (!isDragging) return;
+        translateX = clientX - startX;
+        translateY = clientY - startY;
+        updateTransform();
+    }
+    
+    function endDrag() {
+        isDragging = false;
+        imageContainer.style.cursor = 'grab';
+    }
+    
+    // Mouse events
+    imageContainer.addEventListener('mousedown', function(e) {
+        e.preventDefault();
+        startDrag(e.clientX, e.clientY);
+    });
+    
+    document.addEventListener('mousemove', function(e) {
+        drag(e.clientX, e.clientY);
+    });
+    
+    document.addEventListener('mouseup', endDrag);
+    
+    // Touch events
+    imageContainer.addEventListener('touchstart', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        startDrag(touch.clientX, touch.clientY);
+    });
+    
+    imageContainer.addEventListener('touchmove', function(e) {
+        e.preventDefault();
+        const touch = e.touches[0];
+        drag(touch.clientX, touch.clientY);
+    });
+    
+    imageContainer.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        endDrag();
+    });
+    
+    // Reset button event listener
+    document.getElementById('resetZoom').addEventListener('click', resetZoom);
+    
+    // Double-click to reset
+    imageContainer.addEventListener('dblclick', resetZoom);
+}
+
+// Initialize image interactions when DOM is loaded
+document.addEventListener('DOMContentLoaded', function() {
+    // Wait for image to load
+    setTimeout(initializeImageInteractions, 500);
+});
+
+// Also initialize when slide changes
+Reveal.on('slidechanged', function(event) {
+    if (event.currentSlide.querySelector('#imageContainer')) {
+        setTimeout(initializeImageInteractions, 100);
+    }
+});

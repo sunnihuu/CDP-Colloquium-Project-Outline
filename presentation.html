@@ -6,18 +6,20 @@
 
     <title>Mapping NYC Foodprint - CDP Colloquium</title>
 
-    <link rel="stylesheet" href="reveal.js/dist/reset.css">
-    <link rel="stylesheet" href="reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="reveal.js/dist/theme/white.css" id="theme">
+    <link rel="stylesheet" href="../reveal.js/dist/reset.css">
+    <link rel="stylesheet" href="../reveal.js/dist/reveal.css">
+    <!-- Default theme removed to use custom styling -->
 
     <!-- Theme used for syntax highlighted code -->
-    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet" href="../reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 
     <!-- External CSS -->
-    <link rel="stylesheet" href="presentation.css">
+    <link rel="stylesheet" href="../css/presentation.css">
 </head>
 <body>
     <div class="reveal">
@@ -25,176 +27,137 @@
             <!-- Title Slide -->
             <section class="title-slide">
                 <div class="header-info">
-                    <div>Columbia GSAPP</div>
-                    <div>Computational Design Practices</div>
-                    <div>Sunni Hu</div>
+                    <div>Columbia GSAP CDP &emsp; Summer 2025 Colloquium 1&emsp; Sunni Hu</div>
                 </div>
-                <h1>Mapping NYC Foodprint</h1>
-                <p><em>Colloquium 1 Summer 2025</em></p>
+                <h1>FOODprint in NYC</h1>
+                <h2>How can we break the carbon-intensive cycles of<br>
+                    urban food systems through data, system thinking,<br>
+                    and computational design?</h2>
             </section>
 
-            <!-- Research Questions -->
-            <section>
-                <h2>Research Questions</h2>
-                <ul>
-                    <li>What invisible infrastructures shape the urban metabolism of food?</li>
-                    <li>How do food footprints reflect global extractivism in local urban space?</li>
-                    <li>Who benefits from the city's food system—and who is excluded?</li>
-                    <li>How can computational design become a tool for intervention, not just representation?</li>
-                </ul>
-            </section>
-
-            <!-- Keywords -->
-            <section>
-                <h2>Keywords</h2>
-                <div class="center">
-                    <ul style="list-style: none; display: inline-block; text-align: left;">
-                        <li>• Foodprint</li>
-                        <li>• Urban Metabolism</li>
-                        <li>• Infrastructural Invisibility</li>
-                        <li>• Global Extractivism</li>
-                        <li>• Spatial Justice</li>
-                        <li>• Food Urbanism</li>
-                    </ul>
-                </div>
-            </section>
-
-            <!-- Intersecting Fields -->
-            <section>
-                <h2>3 Intersecting Fields</h2>
-                <div class="center">
-                    <div style="display: flex; justify-content: space-around; margin-top: 2em;">
-                        <div class="field-box">
-                            <h3>Computational Design</h3>
-                        </div>
-                        <div class="field-box">
-                            <h3>Technology</h3>
-                        </div>
-                        <div class="field-box">
-                            <h3>Sustainability</h3>
-                        </div>
-                    </div>
+            <!-- Index -->
+            <section class="index-slide">
+                <h2>Index</h2>
+                <div class="index-grid">
+                    <ol class="index-list">
+                        <li>Precedent Study
+                            <ol class="sub-list">
+                                <li>Initial Idea</li>
+                            </ol>
+                        </li>
+                        <li>Climate–Food Feedback Loop
+                            <ol class="sub-list">
+                                <li>Research Insights</li>
+                                <li>NYC Food System</li>
+                            </ol>
+                        </li>
+                        <li>Project Framework
+                            <ol class="sub-list">
+                                <li>Mapping FOODprint</li>
+                                <li>Platform Design</li>
+                            </ol>
+                        </li>
+                        <li>Research Foundations
+                            <ol class="sub-list">
+                                <li>Theoretical Groundings</li>
+                                <li>User Profiles</li>
+                                <li>Data & Bias</li>
+                            </ol>
+                        </li>
+                        <li>Visual Strategy</li>
+                        <li>Speculative Directions</li>
+                    </ol>
                 </div>
             </section>
 
-            <!-- Historical Lineage -->
-            <section>
-                <h2>Historical Lineage</h2>
-                <table class="small-text">
-                    <thead>
-                        <tr>
-                            <th>Project Practices</th>
-                            <th>Keywords</th>
-                            <th>Historical Lineage</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td><strong>Computational Mapping</strong></td>
-                            <td>Mapping, Layering, GIS, Planimetric Data</td>
-                            <td>Mapping History, Geographic Information Systems, Cartographic Turn</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Urban Metabolism</strong></td>
-                            <td>Footprint, Energy Flow, Waste, Carbon</td>
-                            <td>Urban Ecology, Industrial Ecology, Urban Metabolism (Wolman 1965)</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Food Urbanism</strong></td>
-                            <td>Food Distribution, Foodscape, Markets</td>
-                            <td>Urban Agriculture, Edible Infrastructure, Jane Jacobs-style Urban Observation</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Spatial Justice</strong></td>
-                            <td>Infrastructural Invisibility, Food Access</td>
-                            <td>Critical Geography, Spatial Justice (Edward Soja), Right to the City</td>
-                        </tr>
-                        <tr>
-                            <td><strong>Sustainability + Ecology</strong></td>
-                            <td>Carbon Footprint, Water Footprint, Land Use</td>
-                            <td>Sustainability Science, Ecological Economics, Environmental Justice</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </section>
-
-            <!-- Situated Technology -->
-            <section>
-                <h2>Situated Technology</h2>
-                <ul class="small-text">
-                    <li><strong>Computation as Embedded Practice:</strong> Technologies like GIS and D3.js are not neutral—they reflect and shape the social, political, and ecological systems in which they operate.</li>
-                    <li><strong>Critical Cartography:</strong> Maps are arguments, not representations—they reveal power, inequality, and movement.</li>
-                    <li><strong>Infrastructural Aesthetics:</strong> Digital interfaces are used to expose the hidden infrastructures behind food systems—trade routes, labor flows, environmental costs.</li>
-                    <li><strong>Hybrid Methods:</strong> Combines GIS metrics, migration data, food accessibility indices, and community interviews to build multi-layered narratives.</li>
-                </ul>
-            </section>
-
-            <!-- Methods -->
-            <section>
-                <h2>Methods</h2>
-                <ul class="small-text">
-                    <li><strong>Software & Tools:</strong> QGIS, D3.js, HTML/CSS/JavaScript, Python, Excel, Figma, Adobe XD</li>
-                    <li><strong>Techniques:</strong> Spatial data mapping, interactive visualization, data cleaning, UX & service prototyping</li>
-                    <li><strong>Data Practices:</strong> Quantitative (GIS layers, metrics), qualitative (interviews, oral histories), hybrid storytelling</li>
-                    <li><strong>Theoretical Approaches:</strong> Critical cartography, infrastructural aesthetics, human-centered design, data-driven design</li>
-                    <li><strong>Design Tactics:</strong> Narrative mapping, speculative prototyping, interactive web design</li>
-                </ul>
-            </section>
-
-            <!-- Rhetorical Argument -->
-            <section>
-                <h2>Rhetorical Argument</h2>
-                <p>
-                    Through the layered mapping of food systems, my project argues that food access and ecological footprints are deeply intertwined with historical power dynamics and infrastructural invisibilities. Design is not neutral: it is a tool to expose, challenge, and reimagine these embedded inequalities. By combining quantitative data with lived narratives, the project advocates for more just, transparent, and participatory urban food futures.
-                </p>
-            </section>
-
-            <!-- Capstone Project Outline -->
-            <section>
-                <h2>Capstone Project Outline</h2>
-                <div class="small-text">
-                    <h3>Part 1: Mapping NYC Foodprint</h3>
-                    <ul>
-                        <li>Collect and integrate multi-source data</li>
-                        <li>Create multi-layered digital map using GIS and computational design tools</li>
-                        <li>Analyze quantitative and qualitative data to reveal inequalities</li>
-                        <li>Develop interactive visual artifacts</li>
-                    </ul>
-                    <h3>Part 2: Hypotheses and Open-Ended Explorations</h3>
-                    <ul>
-                        <li>Formulate hypotheses about digital service platforms, infrastructure upgrades, and supply chain transparency</li>
-                        <li>Explore diverse future design possibilities</li>
-                        <li>Maintain open, exploratory stance</li>
-                    </ul>
+            <!-- Precedent Study: OEC -->
+            <section class="image-slide">
+                <div class="image-container" id="imageContainer">
+                    <img src="../images/oec/Precendent Study.png" alt="Precedent Study" id="precedentImage" class="zoomable-image">
                 </div>
             </section>
 
-            <!-- The Challenge -->
+            <!-- Initial Curiosity & Global Mapping Challenge -->
             <section>
-                <h2>The Challenge</h2>
-                <div class="small-text">
-                    <h3>Technical Skills</h3>
-                    <ul>
-                        <li>Advance GIS spatial analysis for multi-layer data</li>
-                        <li>Master data visualization tools (D3.js, web maps)</li>
-                        <li>Integrate qualitative and quantitative data</li>
-                    </ul>
-                    <h3>Data Acquisition & Processing</h3>
-                    <ul>
-                        <li>Find/create up-to-date, high-quality datasets</li>
-                        <li>Clean and combine diverse data sources</li>
-                    </ul>
-                    <h3>Collaboration & Scope</h3>
-                    <ul>
-                        <li>Engage with experts and community stakeholders</li>
-                        <li>Define realistic and manageable project scope</li>
-                    </ul>
-                </div>
+                <h2>Initial Curiosity & Global Mapping Challenge</h2>
+                <p>[Content for initial curiosity and global mapping challenge]</p>
             </section>
 
-            <!-- Thank You -->
+            <!-- Turning to NYC Food System -->
+            <section>
+                <h2>Turning to NYC Food System</h2>
+                <p>[Content for NYC food system focus]</p>
+            </section>
+
+            <!-- The Climate-Food Feedback Loop -->
+            <section>
+                <h2>The Climate-Food Feedback Loop</h2>
+                <p>[Content for climate-food feedback loop]</p>
+            </section>
+
+            <!-- Project Overview: Two-Part Plan -->
+            <section>
+                <h2>Project Overview: Two-Part Plan</h2>
+                <p>[Content for two-part plan overview]</p>
+            </section>
+
+            <!-- Theoretical Foundation -->
+            <section>
+                <h2>Theoretical Foundation</h2>
+                <p>[Content for theoretical foundation]</p>
+            </section>
+
+            <!-- User Clarity -->
+            <section>
+                <h2>User Clarity</h2>
+                <p>[Content for user clarity]</p>
+            </section>
+
+            <!-- Data Ethics -->
+            <section>
+                <h2>Data Ethics</h2>
+                <p>[Content for data ethics]</p>
+            </section>
+
+            <!-- Visual Strategy -->
+            <section>
+                <h2>Visual Strategy</h2>
+                <p>[Content for visual strategy]</p>
+            </section>
+
+            <!-- Next Steps -->
+            <section>
+                <h2>Next Steps</h2>
+                <p>[Content for next steps]</p>
+            </section>
+
+            <!-- Carbon Mapping (Project Part 1) -->
+            <section>
+                <h2>Carbon Mapping (Project Part 1)</h2>
+                <p>[Content for carbon mapping project part 1]</p>
+            </section>
+
+            <!-- Behavioral Intervention (Project Part 2) -->
+            <section>
+                <h2>Behavioral Intervention (Project Part 2)</h2>
+                <p>[Content for behavioral intervention project part 2]</p>
+            </section>
+
+            <!-- Platform Concepts -->
+            <section>
+                <h2>Platform Concepts</h2>
+                <p>[Content for platform concepts]</p>
+            </section>
+
+            <!-- Weekly Practice -->
+            <section>
+                <h2>Weekly Practice</h2>
+                <p>[Content for weekly practice]</p>
+            </section>
+
+            <!-- Closing -->
             <section class="title-slide">
-                <h2>Thank You</h2>
+                <h2>Closing</h2>
                 <p><em>Questions & Discussion</em></p>
                 <div class="header-info" style="margin-top: 3em;">
                     <div>Columbia GSAPP</div>
@@ -205,10 +168,10 @@
         </div>
     </div>
 
-    <script src="reveal.js/dist/reveal.js"></script>
-    <script src="reveal.js/plugin/notes/notes.js"></script>
-    <script src="reveal.js/plugin/markdown/markdown.js"></script>
-    <script src="reveal.js/plugin/highlight/highlight.js"></script>
-    <script src="presentation.js"></script>
+    <script src="../reveal.js/dist/reveal.js"></script>
+    <script src="../reveal.js/plugin/notes/notes.js"></script>
+    <script src="../reveal.js/plugin/markdown/markdown.js"></script>
+    <script src="../reveal.js/plugin/highlight/highlight.js"></script>
+    <script src="../js/presentation.js"></script>
 </body>
 </html>
