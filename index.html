@@ -85,8 +85,8 @@
                 </section>
 
                 <!-- Sub-page for Precedent Study Pop Up-->
-                <section>
-                    <div class="popup-gallery" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding-left: 30px; padding-right: 30px; width: 100%; height: auto; box-sizing: border-box; align-content: start;">
+                <section style="overflow-y: auto; height: 100vh; display: flex; flex-direction: column;">
+                    <div class="popup-gallery" style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; padding: 10px 30px 100px 60px; width: 100%; box-sizing: border-box; align-content: start; overflow-y: auto; flex: 1; min-height: 0;">
                         <img src="images/oec/popup/Screenshot 2025-08-02 at 10.53.44.png" 
                              alt="Screenshot 1" 
                              style="width: 100%; height: 180px; object-fit: cover; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.15);">
@@ -157,19 +157,60 @@
                 </section>
             </section>
 
-            <!-- Turning to NYC Food System -->
-            <section> 
+            <!-- NYC Food System -->
+            <section>
                 <section>
-                    <h1>NYC residents are facing rising household food costs.</h1>
-                    <div style="text-align: center; margin-top: 30px;">
-                        <img src="images/reserch/cost1.png" 
-                             alt="Cost Analysis" 
-                             style="max-width: 90%; height: auto; border-radius: 8px; box-shadow: 0 3px 10px rgba(0,0,0,0.15);">
+                    <div style="display: flex; align-items: center; height: 100%; box-sizing: border-box;">
+                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <h2 style="color: #296307;">Rising Household Food Costs</h2>
+                            <h3 style="color: #296307;">From 2012 to 2023, the cost of food at home increased by 65.8%, rising faster than dining out.</h3>
+                        </div>
+                        <div style="flex: 0 0 40%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <img src="images/reserch/cost1.png" 
+                                 alt="Rising household food costs" 
+                                 style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <p class="caption" style="margin-top: 10px; text-align: center;">
+                                Source: New York State Office of the State Comptroller, 2025
+                            </p>
+                        </div>
                     </div>
                 </section>
-                <section><h1>About 3 million New Yorkers reside in neighborhoods classified as food deserts, lacking convenient access to fresh food.</h1></section>
-                <section><h1>The NYC food system also faces challenges such as supply gaps, food insecurity, and a growing meal gap.</h1></section>
-                <section><h1>This is not just a problem in New York City, it's a global issue.</h1></section>
+
+                <!-- Sub-page for NYC Food System -->
+                <section>                    
+                    <div style="display: flex; align-items: center; height: 100%; box-sizing: border-box;">
+                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <h2 style="color: #296307;">Low-Income Families Struggle</h2>
+                            <h3 style="color: #296307;">In 2022–2023, families earning under $15K per year spent nearly 70% of their income on food.s</h3>
+                        </div>
+                        <div style="flex: 0 0 40%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <img src="images/reserch/cost2.png" 
+                                 alt="Rising household food costs" 
+                                 style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <p class="caption" style="margin-top: 10px; text-align: center;">
+                                Source: New York State Office of the State Comptroller, 2025
+                            </p>
+                        </div>
+                    </div>
+
+                </section>
+                <!-- Sub-page for NYC Food System -->
+                <section>
+                    <div style="display: flex; align-items: center; height: 100%; box-sizing: border-box;">
+                        <div style="flex: 1; display: flex; flex-direction: column; justify-content: center;">
+                            <h2 style="color: #296307;">Food Deserts in NYC</h2>
+                            <h3 style="color: #296307;">About 3 million NYC residents live in neighborhoods with poor access to grocery stores.</h3>
+                        </div>
+                        <div style="flex: 0 0 40%; display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                            <img src="images/reserch/cost2.png" 
+                                 alt="Rising household food costs" 
+                                 style="max-width: 100%; height: auto; border-radius: 8px; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+                            <p class="caption" style="margin-top: 10px; text-align: center;">
+                                Source: New York State Office of the State Comptroller, 2025
+                            </p>
+                        </div>
+                    </div>
+                </section>
             </section>
 
             

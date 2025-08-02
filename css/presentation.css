@@ -36,10 +36,22 @@ html, body {
     margin-bottom: 25px !important;
 }
 
+.reveal h3 {
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 40px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
+}
+
 .reveal p {
     color: #296307 !important;
     text-align: left !important;
-    font-family: "Noto Serif", serif !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 10px !important;
     font-weight: 400 !important;
     line-height: 1.4 !important;
     margin-bottom: 15px !important;
@@ -52,13 +64,13 @@ html, body {
 
 /* Title slide specific styling */
 .reveal .title-slide {
-    text-align: left !important;
+    text-align: left ;
     background-color: #fff5db;
     color: #296307;
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: flex-start !important;
-    align-items: flex-start !important;
+    display: flex ;
+    flex-direction: column ;
+    justify-content: flex-start ;
+    align-items: flex-start ;
 }
 
 .reveal .title-slide .header-info {
