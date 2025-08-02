@@ -2,7 +2,7 @@
 
 /* Override body and html background */
 html, body {
-    background-color: #000000 !important;
+    background-color: #fff5db !important;
 }
 
 /* Global slide styling - Applied to ALL slides */
@@ -28,7 +28,7 @@ html, body {
     color: #296307 !important;
     text-align: left !important;
     font-family: "Noto Serif", serif !important;
-    font-size: 35px;
+    font-size: 30px;
     font-weight: 300 !important;
     font-style: italic !important;
     text-transform: none !important;
@@ -62,53 +62,6 @@ html, body {
     font-style: italic !important;
 }
 
-/* Title slide specific styling */
-.reveal .title-slide {
-    text-align: left ;
-    background-color: #fff5db;
-    color: #296307;
-    display: flex ;
-    flex-direction: column ;
-    justify-content: flex-start ;
-    align-items: flex-start ;
-}
-
-.reveal .title-slide .header-info {
-    color: #296307;
-    text-align: left;
-    margin-bottom: 30px;
-    margin-top: 0;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 20px;
-    line-height: 1.2;
-}
-
-.reveal .title-slide h1 {
-    color: #296307;
-    text-align: left;
-    margin-left: 0;
-    margin-top: 20px;
-    margin-bottom: 15px;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-size: 70px;
-    font-weight: 700;
-    font-style: normal;
-    text-transform: none !important;
-    line-height: 1.1;
-}
-
-.reveal .title-slide h2 {
-    color: #296307;
-    text-align: left;
-    margin-left: 0;
-    font-family: "Noto Serif", serif;
-    font-size: 20px;
-    font-weight: 400;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
-}
 
 /* Index page specific styling */
 .reveal .index-slide .index-grid {
