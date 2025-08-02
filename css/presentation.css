@@ -12,6 +12,162 @@ html, body {
     text-align: left !important;
 }
 
+/* Layout utilities */
+.flex-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 40px;
+}
+
+.flex-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.flex-image {
+    flex: 0 0 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.flex-image-45 {
+    flex: 0 0 45%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+/* Image styling */
+.responsive-image {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.responsive-image-60 {
+    width: 60%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.responsive-image-87 {
+    width: 87%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+/* Caption styling */
+.caption {
+    margin-top: 10px;
+    text-align: center;
+    font-size: 14px;
+    color: #666;
+}
+
+/* Card components */
+.info-card {
+    background-color: rgba(255, 133, 0, 0.1);
+    border-left: 4px solid #ff8500;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+    margin-bottom: 30px;
+    max-width: 900px;
+}
+
+.climate-card {
+    background-color: rgba(230, 57, 70, 0.1);
+    border-left: 4px solid #e63946;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.system-card {
+    background-color: rgba(41, 99, 7, 0.1);
+    border-left: 4px solid #296307;
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.bridge-card {
+    background-color: rgba(255, 133, 0, 0.1);
+    border-left: 4px solid #ff8500;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: center;
+}
+
+/* Grid layouts */
+.dual-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-bottom: 30px;
+}
+
+/* Text styling overrides */
+.green-text {
+    color: #296307;
+}
+
+.climate-color {
+    color: #e63946;
+}
+
+.system-color {
+    color: #296307;
+}
+
+.bridge-color {
+    color: #ff8500;
+}
+
+/* Spacing utilities */
+.gap-40 {
+    gap: 40px;
+}
+
+.mb-30 {
+    margin-bottom: 30px;
+}
+
+.mb-20 {
+    margin-bottom: 20px;
+}
+
+.mb-15 {
+    margin-bottom: 15px;
+}
+
+/* Visualization container */
+.viz-container {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
 /* Global typography - Applied to ALL slides */
 .reveal h1 {
     color: #296307 !important;
