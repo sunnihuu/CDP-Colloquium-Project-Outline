@@ -1,0 +1,228 @@
+/* Presentation Styles - Starting Fresh */
+
+/* Font Classes */
+.plus-jakarta-sans-title {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.noto-serif-subtitle {
+  font-family: "Noto Serif", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings: "wdth" 100;
+}
+
+/* Basic reveal.js styling example */
+.reveal {
+    font-family: "IBM Plex Mono", monospace;
+    font-size: 40px;
+    font-weight: 400;
+    color: #222;
+    background-color: #e8e8e8;
+}
+
+/* Title slide specific styling */
+.reveal .title-slide {
+    text-align: left !important;
+    background-color: #fff5db;
+    color: #296307;
+    padding: 40px 40px 40px 60px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: flex-start !important;
+    align-items: flex-start !important;
+}
+
+.reveal .title-slide .slides-wrapper {
+    margin-top: -80px;
+    margin-left: -40px;
+}
+
+.reveal .title-slide h1 {
+    color: #296307;
+    text-align: left;
+    margin-left: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700;
+    font-style: normal;
+}
+
+.reveal .title-slide h2,
+.reveal .title-slide h3 {
+    color: #296307;
+    text-align: left;
+    margin-left: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+}
+
+.reveal .title-slide p,
+.reveal .title-slide em {
+    color: #296307;
+    text-align: left;
+    margin-left: 0;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.reveal .title-slide .header-info {
+    color: #296307;
+    text-align: left;
+    margin-bottom: 20px;
+    margin-top: 0;
+    font-family: "Noto Serif", serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+    font-variation-settings: "wdth" 100;
+}
+
+.reveal h1,
+.reveal h2,
+.reveal h3,
+.reveal h4,
+.reveal h5,
+.reveal h6 {
+    margin: 0 0 20px 0;
+    color: #222;
+    font-family: "IBM Plex Mono", monospace;
+    font-weight: 400;
+    line-height: 1.2;
+    letter-spacing: normal;
+    text-transform: none;
+    text-shadow: none;
+    word-wrap: break-word;
+}
+
+.reveal h1 {
+    font-size: 2.5em;
+}
+
+.reveal h2 {
+    font-size: 1.6em;
+}
+
+.reveal h3 {
+    font-size: 1.3em;
+}
+
+.reveal h4 {
+    font-size: 1em;
+}
+
+.reveal p {
+    margin: 20px 0;
+    line-height: 1.3;
+}
+
+/* Remove trailing margins after the last child */
+.reveal h1:last-child,
+.reveal h2:last-child,
+.reveal h3:last-child,
+.reveal h4:last-child,
+.reveal h5:last-child,
+.reveal h6:last-child {
+    margin-bottom: 0;
+}
+
+/* Ensure certain elements are never larger than the slide itself */
+.reveal img,
+.reveal video,
+.reveal iframe {
+    max-width: 95%;
+    max-height: 95%;
+}
+
+.reveal strong,
+.reveal b {
+    font-weight: bold;
+}
+
+.reveal em {
+    font-style: italic;
+}
+
+/**
+ * Layout helpers.
+ */
+
+/* Stretch an element vertically based on available space */
+.reveal .stretch,
+.reveal .r-stretch {
+	max-width: none;
+	max-height: none;
+}
+
+.reveal pre.stretch code,
+.reveal pre.r-stretch code {
+	height: 100%;
+	max-height: 100%;
+	box-sizing: border-box;
+}
+
+/* Text that auto-fits its container */
+.reveal .r-fit-text {
+	display: inline-block; /* https://github.com/rikschennink/fitty#performance */
+	white-space: nowrap;
+}
+
+/* Stack multiple elements on top of each other */
+.reveal .r-stack {
+	display: grid;
+	grid-template-rows: 100%;
+}
+
+.reveal .r-stack > * {
+	grid-area: 1/1;
+	margin: auto;
+}
+
+/* Horizontal and vertical stacks */
+.reveal .r-vstack,
+.reveal .r-hstack {
+	display: flex;
+}
+
+.reveal .r-vstack img, 
+.reveal .r-vstack video,
+.reveal .r-hstack img,
+.reveal .r-hstack video {
+	min-width: 0;
+	min-height: 0;
+	object-fit: contain;
+}
+
+.reveal .r-vstack {
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.reveal .r-hstack {
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+/* Naming based on tailwindcss */
+.reveal .items-stretch { align-items: stretch; }
+.reveal .items-start { align-items: flex-start; }
+.reveal .items-center { align-items: center; }
+.reveal .items-end { align-items: flex-end; }
+
+.reveal .justify-between { justify-content: space-between; }
+.reveal .justify-around { justify-content: space-around; }
+.reveal .justify-start { justify-content: flex-start; }
+.reveal .justify-center { justify-content: center; }
+.reveal .justify-end { justify-content: flex-end; }
+
