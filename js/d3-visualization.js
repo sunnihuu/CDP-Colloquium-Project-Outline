@@ -30,10 +30,10 @@ const VISUALIZATION_DATA = [
     { source: "Extreme Weather", target: "Reduced Yields", type: "climate" },
     { source: "Reduced Yields", target: "Urban Food Shortages", type: "climate" },
     { source: "Urban Food Shortages", target: "System Expansion", type: "climate" },
-    { source: "System Expansion", target: "High FOODprint", type: "climate" },
+    { source: "System Expansion", target: "High foodprint", type: "climate" },
 
     // Feedback loop (Dashed Orange)
-    { source: "High FOODprint", target: "Climate Change", type: "feedback" },
+    { source: "High foodprint", target: "Climate Change", type: "feedback" },
 
     // Urban Food System Loop (Green)
     { source: "Production", target: "Processing", type: "system" },
@@ -45,13 +45,13 @@ const VISUALIZATION_DATA = [
 
     // Interactions between systems (Gray dashed bridges)
     { source: "Urban Food Shortages", target: "Retail", type: "bridge" },
-    { source: "Production", target: "High FOODprint", type: "bridge" },
-    { source: "Transport", target: "High FOODprint", type: "bridge" }
+    { source: "Production", target: "High foodprint", type: "bridge" },
+    { source: "Transport", target: "High foodprint", type: "bridge" }
 ];
 
 // Node categorization
 const NODE_CATEGORIES = {
-    climate: ["Climate Change", "Extreme Weather", "Reduced Yields", "Urban Food Shortages", "High FOODprint"],
+    climate: ["Climate Change", "Extreme Weather", "Reduced Yields", "Urban Food Shortages", "High foodprint"],
     system: ["Production", "Processing", "Transport", "Retail", "Consumption", "Waste"],
     bridge: ["System Expansion"]
 };
