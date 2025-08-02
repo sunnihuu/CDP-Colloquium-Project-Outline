@@ -226,10 +226,16 @@ Reveal.on('overviewhidden', function() {
 
 // Interactive Image Pan & Zoom Functionality
 function initializeImageInteractions() {
+    console.log('Initializing image interactions...');
     const imageContainer = document.getElementById('imageContainer');
     const image = document.getElementById('precedentImage');
     
-    if (!imageContainer || !image) return;
+    if (!imageContainer || !image) {
+        console.log('Image container or image not found');
+        return;
+    }
+    
+    console.log('Image elements found, setting up interactions');
     
     let scale = 1;
     let translateX = 0;
@@ -246,18 +252,24 @@ function initializeImageInteractions() {
     resetButton.id = 'resetZoom';
     resetButton.textContent = 'Reset';
     imageContainer.appendChild(resetButton);
+    console.log('Reset button added to image container');
     
     // Update image transform
     function updateTransform() {
         image.style.transform = `translate(${translateX}px, ${translateY}px) scale(${scale})`;
     }
     
-    // Reset function for double-click
+    // Reset function for double-click and button
     function resetZoom() {
+        console.log('Reset function called');
         scale = 1;
         translateX = 0;
         translateY = 0;
-        updateTransform();
+        // Force update the transform immediately
+        if (image) {
+            image.style.transform = `translate(0px, 0px) scale(1)`;
+            console.log('Image reset to original position and scale');
+        }
     }
     
     // Mouse wheel zoom
@@ -319,7 +331,18 @@ function initializeImageInteractions() {
     });
     
     // Reset button event listener
-    document.getElementById('resetZoom').addEventListener('click', resetZoom);
+    const resetBtn = document.getElementById('resetZoom');
+    if (resetBtn) {
+        resetBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            e.stopPropagation();
+            console.log('Reset button clicked');
+            resetZoom();
+        });
+        console.log('Reset button event listener attached');
+    } else {
+        console.log('Reset button not found');
+    }
     
     // Double-click to reset
     imageContainer.addEventListener('dblclick', resetZoom);
