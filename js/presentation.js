@@ -52,8 +52,45 @@ Reveal.initialize({
     margin: 0.1,
     minScale: 0.2,
     maxScale: 2.0,
-    disableLayout: false
+    disableLayout: false,
+
+    // On ready callback
+    ready: function() {
+        initializeIndexInteractions();
+    }
 });
+
+// Index page expand/collapse functionality
+function initializeIndexInteractions() {
+    const expandableItems = document.querySelectorAll('.index-slide .expandable');
+    
+    expandableItems.forEach(item => {
+        const mainItem = item.querySelector('.main-item');
+        const toggleIcon = item.querySelector('.toggle-icon');
+        
+        mainItem.addEventListener('click', function() {
+            item.classList.toggle('collapsed');
+            
+            // Update icon rotation
+            if (item.classList.contains('collapsed')) {
+                toggleIcon.style.transform = 'rotate(-90deg)';
+            } else {
+                toggleIcon.style.transform = 'rotate(0deg)';
+            }
+        });
+        
+        // Add hover effect
+        mainItem.addEventListener('mouseenter', function() {
+            if (!item.classList.contains('collapsed')) {
+                toggleIcon.style.color = '#1a4004';
+            }
+        });
+        
+        mainItem.addEventListener('mouseleave', function() {
+            toggleIcon.style.color = '#296307';
+        });
+    });
+}
 
 // Custom presentation functions
 function initPresentationFeatures() {

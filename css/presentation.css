@@ -1,28 +1,12 @@
-/* Presentation Styles - Starting Fresh */
+/* Presentation Styles - Title Slide Only */
 
-/* Font Classes */
-.plus-jakarta-sans-title {
-  font-family: "Plus Jakarta Sans", sans-serif;
-  font-optical-sizing: auto;
-  font-weight: 700;
-  font-style: normal;
+/* Override body and html background */
+html, body {
+    background-color: #fff5db !important;
 }
 
-.noto-serif-subtitle {
-  font-family: "Noto Serif", serif;
-  font-optical-sizing: auto;
-  font-weight: 400;
-  font-style: normal;
-  font-variation-settings: "wdth" 100;
-}
-
-/* Basic reveal.js styling example */
 .reveal {
-    font-family: "IBM Plex Mono", monospace;
-    font-size: 40px;
-    font-weight: 400;
-    color: #222;
-    background-color: #e8e8e8;
+    background-color: #fff5db !important;
 }
 
 /* Title slide specific styling */
@@ -30,38 +14,38 @@
     text-align: left !important;
     background-color: #fff5db;
     color: #296307;
-    padding: 40px 40px 40px 60px !important;
     display: flex !important;
     flex-direction: column !important;
     justify-content: flex-start !important;
     align-items: flex-start !important;
 }
 
-.reveal .title-slide .slides-wrapper {
-    margin-top: -80px;
-    margin-left: -40px;
+.reveal .title-slide .header-info {
+    color: #296307;
+    text-align: left;
+    margin-bottom: 30px;
+    margin-top: 0;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    line-height: 1.2;
 }
 
 .reveal .title-slide h1 {
     color: #296307;
     text-align: left;
     margin-left: 0;
+    margin-top: 20px;
+    margin-bottom: 15px;
     font-family: "Plus Jakarta Sans", sans-serif;
-    font-optical-sizing: auto;
+    font-size: 70px;
     font-weight: 700;
     font-style: normal;
+    text-transform: none !important;
+    line-height: 1.1;
 }
 
-.reveal .title-slide h2,
-.reveal .title-slide h3 {
-    color: #296307;
-    text-align: left;
-    margin-left: 0;
-    font-family: "Plus Jakarta Sans", sans-serif;
-    font-optical-sizing: auto;
-    font-weight: 600;
-    font-style: normal;
-}
 
 .reveal .title-slide p,
 .reveal .title-slide em {
@@ -69,160 +53,169 @@
     text-align: left;
     margin-left: 0;
     font-family: "Noto Serif", serif;
-    font-optical-sizing: auto;
+    font-size: 20px;
     font-weight: 400;
     font-style: normal;
     font-variation-settings: "wdth" 100;
 }
 
-.reveal .title-slide .header-info {
-    color: #296307;
-    text-align: left;
-    margin-bottom: 20px;
-    margin-top: 0;
-    font-family: "Noto Serif", serif;
-    font-optical-sizing: auto;
-    font-weight: 300;
-    font-style: normal;
-    font-variation-settings: "wdth" 100;
+/* Global slide styling - Applied to ALL slides */
+.reveal .slides section {
+    background-color: #fff5db !important;
+    color: #296307 !important;
+    text-align: left !important;
+    padding: 40px !important;
 }
 
-.reveal h1,
-.reveal h2,
-.reveal h3,
-.reveal h4,
-.reveal h5,
-.reveal h6 {
-    margin: 0 0 20px 0;
-    color: #222;
-    font-family: "IBM Plex Mono", monospace;
-    font-weight: 400;
-    line-height: 1.2;
-    letter-spacing: normal;
-    text-transform: none;
-    text-shadow: none;
-    word-wrap: break-word;
-}
-
+/* Global typography - Applied to ALL slides */
 .reveal h1 {
-    font-size: 2.5em;
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 55px !important;
+    font-weight: 700 !important;
+    text-transform: none !important;
+    line-height: 1.2 !important;
+    margin-bottom: 20px !important;
 }
 
 .reveal h2 {
-    font-size: 1.6em;
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Noto Serif", serif !important;
+    font-size: 35px !important;
+    font-weight: 300 !important;
+    font-style: italic !important;
+    text-transform: none !important;
+    line-height: 1.3 !important;
+    margin-bottom: 25px !important;
 }
 
 .reveal h3 {
-    font-size: 1.3em;
-}
-
-.reveal h4 {
-    font-size: 1em;
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 24px !important;
+    font-weight: 500 !important;
+    text-transform: none !important;
+    line-height: 1.3 !important;
+    margin-bottom: 15px !important;
 }
 
 .reveal p {
-    margin: 20px 0;
-    line-height: 1.3;
+    color: #296307 !important;
+    text-align: left !important;
+    font-family: "Noto Serif", serif !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 15px !important;
 }
 
-/* Remove trailing margins after the last child */
-.reveal h1:last-child,
-.reveal h2:last-child,
-.reveal h3:last-child,
-.reveal h4:last-child,
-.reveal h5:last-child,
-.reveal h6:last-child {
-    margin-bottom: 0;
+.reveal ul,
+.reveal ol {
+    color: #296307 !important;
+    font-family: "Noto Serif", serif !important;
+    font-size: 18px !important;
+    font-weight: 400 !important;
+    line-height: 1.5 !important;
+    text-align: left !important;
 }
 
-/* Ensure certain elements are never larger than the slide itself */
-.reveal img,
-.reveal video,
-.reveal iframe {
-    max-width: 95%;
-    max-height: 95%;
+.reveal li {
+    color: #296307 !important;
+    margin-bottom: 8px !important;
 }
 
 .reveal strong,
 .reveal b {
-    font-weight: bold;
+    color: #296307 !important;
+    font-weight: 600 !important;
 }
 
 .reveal em {
-    font-style: italic;
+    color: #296307 !important;
+    font-style: italic !important;
 }
 
-/**
- * Layout helpers.
- */
-
-/* Stretch an element vertically based on available space */
-.reveal .stretch,
-.reveal .r-stretch {
-	max-width: none;
-	max-height: none;
+/* Index page specific styling */
+.reveal .index-slide .index-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-.reveal pre.stretch code,
-.reveal pre.r-stretch code {
-	height: 100%;
-	max-height: 100%;
-	box-sizing: border-box;
+.reveal .index-slide .index-list {
+    columns: 2;
+    column-gap: 60px;
+    column-fill: balance;
+    list-style: none;
+    counter-reset: index-counter;
+    padding-left: 0;
 }
 
-/* Text that auto-fits its container */
-.reveal .r-fit-text {
-	display: inline-block; /* https://github.com/rikschennink/fitty#performance */
-	white-space: nowrap;
+.reveal .index-slide .index-list > li {
+    color: #296307 !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 18px !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 20px !important;
+    padding-left: 35px;
+    position: relative;
+    break-inside: avoid;
+    counter-increment: index-counter;
 }
 
-/* Stack multiple elements on top of each other */
-.reveal .r-stack {
-	display: grid;
-	grid-template-rows: 100%;
+.reveal .index-slide .index-list > li::before {
+    content: counter(index-counter);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #296307;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    background-color: transparent;
+    border: 1.5px solid #296307;
+    border-radius: 50%;
+    width: 26px;
+    height: 26px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
 }
 
-.reveal .r-stack > * {
-	grid-area: 1/1;
-	margin: auto;
+.reveal .index-slide .sub-list {
+    list-style: none;
+    counter-reset: sub-counter;
+    margin-top: 8px;
+    margin-left: 0;
+    padding-left: 0;
 }
 
-/* Horizontal and vertical stacks */
-.reveal .r-vstack,
-.reveal .r-hstack {
-	display: flex;
+.reveal .index-slide .sub-list li {
+    color: #296307 !important;
+    font-family: "Plus Jakarta Sans", sans-serif !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    margin-bottom: 6px !important;
+    padding-left: 25px;
+    position: relative;
+    counter-increment: sub-counter;
 }
 
-.reveal .r-vstack img, 
-.reveal .r-vstack video,
-.reveal .r-hstack img,
-.reveal .r-hstack video {
-	min-width: 0;
-	min-height: 0;
-	object-fit: contain;
+.reveal .index-slide .sub-list li::before {
+    content: counter(index-counter, decimal) "." counter(sub-counter, decimal);
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #296307;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
 }
-
-.reveal .r-vstack {
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-}
-
-.reveal .r-hstack {
-	flex-direction: row;
-	align-items: center;
-	justify-content: center;
-}
-
-/* Naming based on tailwindcss */
-.reveal .items-stretch { align-items: stretch; }
-.reveal .items-start { align-items: flex-start; }
-.reveal .items-center { align-items: center; }
-.reveal .items-end { align-items: flex-end; }
-
-.reveal .justify-between { justify-content: space-between; }
-.reveal .justify-around { justify-content: space-around; }
-.reveal .justify-start { justify-content: flex-start; }
-.reveal .justify-center { justify-content: center; }
-.reveal .justify-end { justify-content: flex-end; }
 
