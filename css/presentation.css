@@ -371,7 +371,6 @@ div[style*="text-align: center"] .caption {
 
 .reveal .index-slide .sub-list {
     list-style: none;
-    counter-reset: sub-counter;
     margin-top: 12px;
     margin-left: 0;
     padding-left: 0;
@@ -384,13 +383,12 @@ div[style*="text-align: center"] .caption {
     font-weight: 400 !important;
     line-height: 1.5 !important;
     margin-bottom: 8px !important;
-    padding-left: 35px;
+    padding-left: 25px;
     position: relative;
-    counter-increment: sub-counter;
 }
 
 .reveal .index-slide .sub-list li::before {
-    content: counter(index-counter, decimal) "." counter(sub-counter, decimal);
+    content: "•";
     position: absolute;
     left: 0;
     top: 2px;
@@ -494,6 +492,37 @@ div[style*="text-align: center"] .caption {
 
 .title-slide {
     text-align: center !important;
+}
+
+/* ==========================================================================
+   Use Cases Cards
+   ========================================================================== */
+
+.use-case-card {
+    background: #ffffff;
+    border: 2px solid #e9ecef;
+    border-radius: 8px;
+    padding: 25px;
+    transition: all 0.3s ease;
+}
+
+.use-case-card:hover {
+    border-color: #28a745;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.card-number {
+    width: 30px;
+    height: 30px;
+    background: #28a745;
+    color: white;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    font-size: 16px;
 }
 
 .header-info {
