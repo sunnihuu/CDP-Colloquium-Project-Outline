@@ -7,7 +7,15 @@
     <!-- Reveal.js Core Styles -->
     <link rel="stylesheet" href="reveal.js/dist/reset.css">
     <link rel="stylesheet" href="reveal.js/dist/reveal.css">
-    <link rel="stylesheet" href="reveal.js/plugin/highlight/monokai.css" id="highlight-theme">
+    <link rel="stylesheet            <!-- Part 1 -->
+            <section>
+                <section>
+                    <div class="flex-container">
+                        <div class="flex-content">
+                            <h2 class="green-text">Part 1: Data Visualization</h2>
+                            <h3 class="green-text" style="line-height: 1.4;">Map-based storytelling and interactive exploration to visualize and analyze NYC's foodprint patterns.</h3>
+                        </div>
+                        <div class="flex-image">eveal.js/plugin/highlight/monokai.css" id="highlight-theme">
     
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -48,19 +56,18 @@
                         </li>
                         <li>Project Overview
                         </li>
-                        <li>Part 1: Data Visualization
+                        <li>Part 1: Data Visualization 
                             <ol class="sub-list">
                                 <li>Visual Communication</li>
                                 <li>Computational Process</li>
                             </ol>
                         </li>
-                        <li>Part 2: Platform
+                        <li>Part 2: Intervening in the Urban Food Chain
                             <ol class="sub-list">
                                 <li>From Map to Action</li>
+                                <li>Urban Food Chain Diagram</li>
                                 <li>User Profiles</li>
-                                <li>Data Ethics</li>
-                                <li>Visual Strategy</li>
-                                <li>Precedents & Inspirations</li>
+                                <li>Case Studies</li>
                                 <li>Future Directions</li>
                             </ol>
                         </li>
@@ -279,17 +286,18 @@
             <!-- Project Overview -->
             <section>
                 <section>
-                <h2>Project Overview</h2>
-                <h1>Visualize → Identify → Design</h1>
-                <h3 style="line-height: 1.5;"> 
-                        1. Visualize NYC’s foodprint to expose an often-invisible urban issue.<br>
+                    <h2>Project Overview</h2>
+                    <h1>Visualize → Identify → Design</h1>
+                    <h3 style="line-height: 1.5;"> 
+                        1. Visualize NYC's foodprint to expose an often-invisible urban issue.<br>
                         2. Analyze spatial and systemic patterns to understand where and why the impact is uneven.<br>
-                        3. Design a platform that helps reduce the city’s foodprint.
+                        3. Design a platform that helps reduce the city's foodprint.
                     </h3>
-            </section>
-            <section>
-                <h2>6 Key Words</h2>
-                <h3 style="line-height: 1.5;"> 
+                </section>
+                
+                <section>
+                    <h2>6 Key Words</h2>
+                    <h3 style="line-height: 1.5;"> 
                         • Food System<br>
                         • Urban Metabolism<br>
                         • Community<br>
@@ -297,16 +305,16 @@
                         • User Experience<br>
                         • Computational Visualization<br>
                     </h3>
-            </section>
+                </section>
 
-                        <section>
-                <h2>3 Intersecting Fields</h2>
-                <h3 style="line-height: 1.5;"> 
+                <section>
+                    <h2>3 Intersecting Fields</h2>
+                    <h3 style="line-height: 1.5;"> 
                         • Food & Environment<br>
                         • Interactive Design<br>
                         • Urban Data Analysis
                     </h3>
-            </section>
+                </section>
             </section>
 
              <!-- Part 1 -->
@@ -416,147 +424,154 @@
                 </div>
             </section>
 
-                        <section class="index-slide">
+            <section class="index-slide">
                 <h2 class="green-text">Part 1: Data Sources</h2>
                 <div class="index-grid">
-<ol class="index-list">
-  <li>Restaurant Location & Classification Data
-    <ul class="sub-list">
-      <li>DOHMH NYC Restaurant Inspection Results</li>
-      <li>Yelp API / Google Places API</li>
-    </ul>
-  </li>
-
-  <li>Carbon Footprint Factors by Food Type
-    <ul class="sub-list">
-      <li>BBC Climate Food Tool</li>
-      <li>Poore & Nemecek (2018) Dataset</li>
-    </ul>
-  </li>
-
-  <li>Population & Demographic Data
-    <ul class="sub-list">
-      <li>NYC Population FactFinder / NYC Planning</li>
-      <li>Census Tract Data via U.S. Census API</li>
-    </ul>
-  </li>
-
-  <li>Food Infrastructure & Access Data
-    <ul class="sub-list">
-      <li>NYC Open Data – Farmers Markets</li>
-      <li>NYC Community Fridge Map</li>
-      <li>USDA Food Access Research Atlas</li>
-    </ul>
-  </li>
-
-  <li>Geographic Boundaries & Spatial Base Layers
-    <ul class="sub-list">
-      <li>NYC MapPLUTO</li>
-      <li>OpenStreetMap / Mapbox</li>
-    </ul>
-  </li>
-</ol>
+                    <ol class="index-list">
+                        <li>Restaurant Location & Classification Data
+                            <ul class="sub-list">
+                                <li>DOHMH NYC Restaurant Inspection Results</li>
+                                <li>Yelp API / Google Places API</li>
+                            </ul>
+                        </li>
+                        <li>Carbon Footprint Factors by Food Type
+                            <ul class="sub-list">
+                                <li>BBC Climate Food Tool</li>
+                                <li>Poore & Nemecek (2018) Dataset</li>
+                            </ul>
+                        </li>
+                        <li>Population & Demographic Data
+                            <ul class="sub-list">
+                                <li>NYC Population FactFinder / NYC Planning</li>
+                                <li>Census Tract Data via U.S. Census API</li>
+                            </ul>
+                        </li>
+                        <li>Food Infrastructure & Access Data
+                            <ul class="sub-list">
+                                <li>NYC Open Data – Farmers Markets</li>
+                                <li>NYC Community Fridge Map</li>
+                                <li>USDA Food Access Research Atlas</li>
+                            </ul>
+                        </li>
+                        <li>Geographic Boundaries & Spatial Base Layers
+                            <ul class="sub-list">
+                                <li>NYC MapPLUTO</li>
+                                <li>OpenStreetMap / Mapbox</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>
             </section>
 
-                        <section class="index-slide">
+            <section class="index-slide">
                 <h2 class="green-text">Part 1: Computational Process</h2>
                 <div class="index-grid">
-<ol class="index-list">
-
-  <li><strong>Data Collection & Classification</strong>
-    <ul class="sub-list">
-      <li><strong>Tools:</strong> Python (Pandas, GeoPandas), Rhino/Grasshopper</li>
-      <li><strong>Method:</strong> Extract and categorize restaurants by cuisine type; link each to a carbon intensity category.</li>
-    </ul>
-  </li>
-
-  <li><strong>Carbon Emissions Modeling</strong>
-    <ul class="sub-list">
-      <li><strong>Tools:</strong> Python, Excel (for carbon matrix modeling)</li>
-      <li><strong>Method:</strong> Apply per-meal carbon intensity to cuisine types using:  
-        <br>Foodprint (kg CO₂e) = Number of Meals × Emission Factor
-      </li>
-    </ul>
-  </li>
-
-  <li><strong>Spatial Aggregation & Visualization</strong>
-    <ul class="sub-list">
-      <li><strong>Tools:</strong> Grasshopper, QGIS, Mapbox Studio</li>
-      <li><strong>Method:</strong> Aggregate emissions at tract or borough level; generate comparative carbon intensity maps.</li>
-    </ul>
-  </li>
-
-  <li><strong>Interactive Storytelling & UX Prototyping</strong>
-    <ul class="sub-list">
-      <li><strong>Tools:</strong> Mapbox GL JS, D3.js, Scrollama.js, Figma</li>
-      <li><strong>Method:</strong> Build a scroll-driven narrative interface; allow users to filter and explore foodprint by neighborhood or cuisine.</li>
-    </ul>
-  </li>
-
-</ol>
+                    <ol class="index-list">
+                        <li><strong>Data Collection & Classification</strong>
+                            <ul class="sub-list">
+                                <li><strong>Tools:</strong> Python (Pandas, GeoPandas), Rhino/Grasshopper</li>
+                                <li><strong>Method:</strong> Extract and categorize restaurants by cuisine type; link each to a carbon intensity category.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Carbon Emissions Modeling</strong>
+                            <ul class="sub-list">
+                                <li><strong>Tools:</strong> Python, Excel (for carbon matrix modeling)</li>
+                                <li><strong>Method:</strong> Apply per-meal carbon intensity to cuisine types using:<br>
+                                    Foodprint (kg CO₂e) = Number of Meals × Emission Factor</li>
+                            </ul>
+                        </li>
+                        <li><strong>Spatial Aggregation & Visualization</strong>
+                            <ul class="sub-list">
+                                <li><strong>Tools:</strong> Grasshopper, QGIS, Mapbox Studio</li>
+                                <li><strong>Method:</strong> Aggregate emissions at tract or borough level; generate comparative carbon intensity maps.</li>
+                            </ul>
+                        </li>
+                        <li><strong>Interactive Storytelling & UX Prototyping</strong>
+                            <ul class="sub-list">
+                                <li><strong>Tools:</strong> Mapbox GL JS, D3.js, Scrollama.js, Figma</li>
+                                <li><strong>Method:</strong> Build a scroll-driven narrative interface; allow users to filter and explore foodprint by neighborhood or cuisine.</li>
+                            </ul>
+                        </li>
+                    </ol>
                 </div>
             </section>
             </section>
-   <section>
 
-                    <div>
-                    <h2>Part 2: Connection</h2>
+            <!-- Part 2: Intervening in the Urban Food Chain -->
+            <section>
+                <section>
+                    <div class="flex-container">
+                        <div class="flex-content">
+                            <h2 class="green-text">Part 2: Intervening in the Urban Food Chain</h2>
+                            <h3 class="green-text" style="line-height: 1.4;">From mapping foodprint patterns to designing intervention strategies that can reshape NYC's food system.</h3>
+                        </div>
+                        <div class="flex-image">
+                            <a href="https://pudding.cool/2018/03/neighborhoods/" target="_blank" rel="noopener noreferrer">
+                                <img src="images/examples/ScreenRecording2025-08-02at23.19.31-ezgif.com-optimize.gif" 
+                                     alt="Data visualization example showing interactive foodprint mapping" 
+                                     class="responsive-image">
+                            </a>
+                            <p class="caption">
+                                The Pudding: Neighborhood Places
+                            </p>
+                        </div>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>Urban Food Chain Diagram</h2>
                     <h3 style="line-height: 1.5;"> 
-                        •1<br>
-                        •1<br>
-                        •2
+                        • Production → Distribution → Retail → Consumption → Waste<br>
+                        • Identifying intervention points at each stage<br>
+                        • Mapping stakeholder relationships and impact opportunities
                     </h3>
-                </div>
-            </section>
+                </section>
 
+                <section class="index-slide">
+                    <h2 class="green-text">User Profiles</h2>
+                    <div class="index-grid">
+                        <ol class="index-list">
+                            <li>Individual Consumers
+                                <ul class="sub-list">
+                                    <li>Climate-conscious residents seeking lower-impact dining options</li>
+                                    <li>Tools: Personal footprint tracking, restaurant recommendations</li>
+                                </ul>
+                            </li>
+                            <li>Restaurant Owners & Food Businesses
+                                <ul class="sub-list">
+                                    <li>Business owners wanting to reduce environmental impact</li>
+                                    <li>Tools: Supply chain optimization, carbon footprint assessment</li>
+                                </ul>
+                            </li>
+                            <li>Community Organizations
+                                <ul class="sub-list">
+                                    <li>Groups advocating for food justice and environmental equity</li>
+                                    <li>Tools: Data visualization for advocacy, community engagement platforms</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+                </section>
 
- <section>
-                <div>
-                    <h2>Part 2: Food Chain</h2>
+                <section>
+                    <h2>Case Studies</h2>
                     <h3 style="line-height: 1.5;"> 
-                        •1<br>
-                        •1<br>
-                        •2
+                        • Community fridges and food sharing networks<br>
+                        • Local sourcing initiatives and urban farming<br>
+                        • Zero-waste restaurant models and circular food systems
                     </h3>
-                </div>
-            </section>
+                </section>
 
- <section>
-                <div>
-                    <h2>Part 2: User Profiles</h2>
+                <section>
+                    <h2>Future Directions</h2>
                     <h3 style="line-height: 1.5;"> 
-                        •1<br>
-                        •1<br>
-                        •2
+                        • Expand platform to include food waste tracking<br>
+                        • Integrate real-time supply chain data<br>
+                        • Develop community-based intervention tools<br>
+                        • Create policy recommendation framework
                     </h3>
-                </div>
-            </section>
-
- <section>
-                <div>
-                    <h2>Part 2: examples</h2>
-                    <h3 style="line-height: 1.5;"> 
-                        •1<br>
-                        •1<br>
-                        •2
-                    </h3>
-                </div>
-            </section>
-
-             <section>
-                <div>
-                    <h2>Part 2: Future Directions</h2>
-                    <h3 style="line-height: 1.5;"> 
-                        •1<br>
-                        •1<br>
-                        •2
-                    </h3>
-                </div>
-            </section>
-   </section>
-  
-            <!-- Key Challenges -->
+                </section>
+            </section>            <!-- Key Challenges -->
             <section>
                 <div>
                     <h2>Key Challenges</h2>
