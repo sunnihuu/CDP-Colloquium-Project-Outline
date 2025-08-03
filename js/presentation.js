@@ -482,3 +482,80 @@ function initializePopupGallery() {
         });
     });
 }
+
+// ==========================================================================
+// Food System Diagram Navigation
+// ==========================================================================
+
+function navigateToSlide(slideId) {
+    // Find the slide by ID
+    const targetSlide = document.getElementById(slideId);
+    if (targetSlide) {
+        // Get the indices of the target slide
+        const indices = Reveal.getIndices(targetSlide);
+        // Navigate to the slide
+        Reveal.slide(indices.h, indices.v);
+    } else if (slideId === 'food-system-diagram') {
+        // Navigate back to the food system diagram slide
+        // Find the section containing the food system diagram
+        const sections = document.querySelectorAll('section');
+        let targetIndex = -1;
+        
+        sections.forEach((section, index) => {
+            if (section.querySelector('.food-system-diagram')) {
+                targetIndex = index;
+            }
+        });
+        
+        if (targetIndex !== -1) {
+            // Navigate to the parent section and then to the specific slide
+            const parentSection = sections[targetIndex].closest('section');
+            if (parentSection) {
+                const indices = Reveal.getIndices(parentSection);
+                // Navigate to the food system diagram slide (first sub-slide of Part 2)
+                Reveal.slide(indices.h, 1); // Assuming it's the second slide in Part 2
+            }
+        }
+    }
+}
+
+// Add event listeners when the page loads
+document.addEventListener('DOMContentLoaded', function() {
+    // Add click event listeners to flow stages
+    const flowStages = document.querySelectorAll('.flow-stage');
+    flowStages.forEach(stage => {
+        stage.addEventListener('click', function() {
+            const onclick = this.getAttribute('onclick');
+            if (onclick) {
+                eval(onclick);
+            }
+        });
+    });
+    
+    // Add click event listeners to back buttons
+    const backButtons = document.querySelectorAll('.back-button');
+    backButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            const onclick = this.getAttribute('onclick');
+            if (onclick) {
+                eval(onclick);
+            }
+        });
+    });
+});
+
+// Alternative navigation method using slide numbers
+function navigateToSlideByNumber(slideNumber, subSlideNumber = 0) {
+    Reveal.slide(slideNumber, subSlideNumber);
+}
+
+// Keyboard shortcuts for food system navigation
+document.addEventListener('keydown', function(event) {
+    // Press 'B' to go back to food system diagram from detail slides
+    if (event.key === 'b' || event.key === 'B') {
+        const currentSlide = Reveal.getCurrentSlide();
+        if (currentSlide && currentSlide.classList.contains('detail-slide')) {
+            navigateToSlide('food-system-diagram');
+        }
+    }
+});
