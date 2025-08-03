@@ -372,27 +372,6 @@ html, body {
     opacity: 1;
 }
 
-/* D3 Visualization Animations */
-@keyframes pulse {
-    0% {
-        opacity: 0.6;
-        transform: scale(1);
-    }
-    50% {
-        opacity: 0.9;
-        transform: scale(1.05);
-    }
-    100% {
-        opacity: 0.6;
-        transform: scale(1);
-    }
-}
-
-/* Highlighted node glow effect */
-.viz-container svg circle[style*="animation"] {
-    animation: pulse 2s ease-in-out infinite;
-}
-
 /* D3 visualization container styling */
 .viz-container {
     width: 100%;
