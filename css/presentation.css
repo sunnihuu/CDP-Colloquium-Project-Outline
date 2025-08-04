@@ -1,3 +1,24 @@
+/* Force all text color to #296307 globally */
+html, body, * {
+  color: #296307 !important;
+}
+ul, ol {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
+}
+/* Ensure left alignment for all elements with .left-align */
+.left-align {
+  text-align: left !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  padding-left: 0 !important;
+}
+
+/* Remove default left padding from nav-list for true left alignment */
+.nav-list.left-align {
+  padding-left: 0 !important;
+}
 /* Clean vertical layout for main content */
 .main-layout {
   display: flex;
@@ -79,10 +100,10 @@
 }
 
 .nav-link:hover {
-  color: #fff;
-  background: #296307;
-  text-decoration: none;
-  transform: translateY(-2px) scale(1.07);
+  color: #1f4c05;
+  background: none;
+  text-decoration: underline;
+  transform: none;
 }
 /* Smaller hero text for index.html */
 .hero-small {

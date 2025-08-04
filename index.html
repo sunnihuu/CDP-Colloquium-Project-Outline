@@ -6,38 +6,66 @@
     <title>Computational Design Workflows</title>
     <link rel="stylesheet" href="css/home-simple.css">
     <link rel="stylesheet" href="css/presentation.css">
+    <style>
+      .nav-link {
+        text-decoration: none;
+        color: inherit;
+      }
+      body.fade-out {
+        opacity: 0;
+        transition: opacity 0.5s cubic-bezier(.4,0,.2,1);
+      }
+    </style>
     <!-- Google Fonts for presentation style -->
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main class="site-container">
-        <div class="main-layout">
-            <header class="page-header">
-                <p class="hero-small">Colloquium 1 : Methods as Practices</p>
-                <p class="hero-small">2025 Summer GSAPP CDP</p>
-                <p class="hero-small">Sunni Hu</p>
-            </header>
-            <nav class="site-nav">
-                <ul class="nav-list">
-                    <li><a href="html/outline.html" class="nav-link">Research Foundations + Project Outline</a></li>
-                    <li><a href="html/ppt.html" class="nav-link">Final Presentation</a></li>
-                    <li><a href="#" class="nav-link" id="toggle-drawing-link" onclick="toggleDrawing(event)">Printed Vertical Drawing</a></li>
-                </ul>
-                <div id="drawing-section" style="display:none; margin-top: 18px;">
-                    <img src="images/Final 17.37.48.png" alt="Printed Vertical Drawing" style="max-width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08);">
-                </div>
-            </nav>
-        </div>
-    </main>
+    <div style="display: flex; align-items: flex-start; gap: 40px; min-height: 300px;">
+      <div style="flex: 1; min-width: 220px; text-align: left; padding-left: 0; margin-left: 0;">
+        <h2 style="text-align: left; padding-left: 0; margin-left: 0;">Colloquium 1 : Methods as Practices</h2>
+        <div style="text-align: left; padding-left: 0; margin-left: 0;">2025 Summer GSAPP CDP</div>
+        <div style="text-align: left; padding-left: 0; margin-left: 0;">Sunni Hu</div>
+        <ul style="padding-left: 0; margin-left: 0; text-align: left;">
+            <li style="padding-left: 0; margin-left: 0;"><a href="html/outline.html" class="nav-link" style="padding-left: 0; margin-left: 0; text-align: left;" onclick="fadeNavigate(event, 'html/outline.html')">Research Foundations + Project Outline</a></li>
+            <li style="padding-left: 0; margin-left: 0;"><a href="html/ppt.html" class="nav-link" style="padding-left: 0; margin-left: 0; text-align: left;" onclick="fadeNavigate(event, 'html/ppt.html')">Final Presentation</a></li>
+            <li style="padding-left: 0; margin-left: 0;"><a href="#" id="toggle-drawing-link" class="nav-link" onclick="toggleDrawing(event)" style="padding-left: 0; margin-left: 0; text-align: left;"><span id="drawing-icon" style="display:inline-block; transition: transform 0.2s; margin-right:8px; font-size: 1.1em; vertical-align: middle;">&#9658;</span>Printed Vertical Drawing</a></li>
+        </ul>
+      </div>
+      <div id="drawing-section" style="display:none; flex: 0 0 340px; margin-top: 0; padding-right: 50px;">
+        <img id="drawing-img" src="images/Final 17.37.48.png" alt="Printed Vertical Drawing" style="max-width:100%; border-radius:12px; box-shadow:0 2px 12px rgba(0,0,0,0.08); opacity:0; transform: translateX(40px); transition: opacity 0.4s cubic-bezier(.4,0,.2,1), transform 0.4s cubic-bezier(.4,0,.2,1);">
+      </div>
+    </div>
 <script>
+function fadeNavigate(e, url) {
+  e.preventDefault();
+  document.body.classList.add('fade-out');
+  setTimeout(function() {
+    window.location.href = url;
+  }, 500);
+}
+
 function toggleDrawing(e) {
   e.preventDefault();
   var section = document.getElementById('drawing-section');
+  var icon = document.getElementById('drawing-icon');
+  var img = document.getElementById('drawing-img');
   if (section.style.display === 'none' || section.style.display === '') {
     section.style.display = 'block';
+    icon.textContent = '\u25BE'; // ▾ Down minimal
+    // Trigger slide-in animation
+    setTimeout(function() {
+      img.style.opacity = '1';
+      img.style.transform = 'translateX(0)';
+    }, 10);
   } else {
-    section.style.display = 'none';
+    // Slide out before hiding
+    img.style.opacity = '0';
+    img.style.transform = 'translateX(40px)';
+    setTimeout(function() {
+      section.style.display = 'none';
+      icon.textContent = '\u25B8'; // ▸ Right minimal
+    }, 400);
   }
 }
 </script>
