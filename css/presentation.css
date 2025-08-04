@@ -1,3 +1,22 @@
+/* Unified image and caption style for all slides */
+.unified-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+  margin-right: 0;
+  margin-left: auto;
+  border-radius: 14px;
+  box-shadow: none;
+  outline: none;
+  border: none;
+  padding: 0;
+}
+
+.unified-caption {
+  margin: 16px 0 0 0 !important;
+  text-align: center;
+}
 /* ==========================================================================
    CDP Colloquium Presentation Styles
    ========================================================================== */
@@ -8,7 +27,7 @@
 
 /* Override body and html background */
 html, body {
-    background-color: #fff5db !important;
+    background-color: #000000 !important;
 }
 
 /* Global slide styling */
