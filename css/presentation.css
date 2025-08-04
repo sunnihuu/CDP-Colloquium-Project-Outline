@@ -1,3 +1,98 @@
+/* Clean vertical layout for main content */
+.main-layout {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 2.5rem;
+  margin-left: 2.5rem;
+  margin-top: 2.5rem;
+}
+
+.main-layout .page-header {
+  position: static;
+  margin-bottom: 0.5rem;
+}
+
+.main-layout .site-nav {
+  margin-top: 0.5rem;
+}
+/* Vertical nav list for index.html */
+.nav-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.nav-list li {
+  margin-bottom: 1.2rem;
+}
+/* Page header upper left */
+.page-header {
+  position: absolute;
+  top: 2.5rem;
+  left: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 10;
+}
+
+/* Center nav links in the page */
+.center-nav {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-left: 2.5rem;
+}
+
+.site-nav {
+  text-align: left;
+}
+/* Top center the hero-section for index.html */
+.hero-section {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: 0;
+  margin-bottom: 2.5rem;
+}
+/* Center the main container on the page */
+.site-container {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+}
+/* Navigation link style for index.html */
+
+.nav-link {
+  font-family: "Plus Jakarta Sans", sans-serif;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #296307;
+  text-decoration: none;
+  transition: color 0.2s, background 0.2s, transform 0.2s;
+  margin: 0 0 1rem 0;
+  display: block;
+  border-radius: 6px;
+  padding: 0.2em 0.7em;
+}
+
+.nav-link:hover {
+  color: #fff;
+  background: #296307;
+  text-decoration: none;
+  transform: translateY(-2px) scale(1.07);
+}
+/* Smaller hero text for index.html */
+.hero-small {
+    font-size: 1.1rem;
+    color: #296307;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-weight: 400;
+    margin: 0.2em 0;
+    text-align: left;
+}
 /* Unified image and caption style for all slides */
 .unified-img {
   width: 100%;
@@ -28,6 +123,7 @@
 /* Override body and html background */
 html, body {
     background-color: #fff5db !important;
+    overflow: hidden !important;
 }
 
 /* Global slide styling */
