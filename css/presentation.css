@@ -698,19 +698,37 @@ div[style*="text-align: center"] .caption {
 }
 
 /* ==========================================================================
-   Slide Number Customization
+   Hide All Page Numbering Elements
    ========================================================================== */
 
-.reveal .slide-number {
-    background-color: #296307 !important;
-    color: white !important;
-    font-family: "Plus Jakarta Sans", sans-serif !important;
-    font-weight: 500 !important;
-    border-radius: 20px !important;
-    padding: 8px 12px !important;
-    font-size: 11px !important;
-    box-shadow: 0 2px 8px rgba(41, 99, 7, 0.3) !important;
-    border: 1px solid #1f4c05 !important;
-    right: 15px !important;
-    bottom: 15px !important;
+/* Hide reveal.js slide numbers completely */
+.reveal .slide-number,
+.reveal .slide-number-a,
+.reveal .slide-number-b,
+.reveal .progress,
+.reveal .speaker-notes-pdf,
+.reveal .print-pdf .slide-number {
+    display: none !important;
+    visibility: hidden !important;
+    opacity: 0 !important;
 }
+
+/* Hide any timer displays */
+.timer,
+.presentation-timer,
+.reveal-timer,
+.clock,
+.time-display {
+    display: none !important;
+    visibility: hidden !important;
+}
+
+/* Hide any other potential numbering elements */
+.slide-counter,
+.page-counter,
+.progress-bar,
+.navigation-counter {
+    display: none !important;
+    visibility: hidden !important;
+}
+

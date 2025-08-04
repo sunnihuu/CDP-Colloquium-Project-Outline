@@ -1,7 +1,9 @@
 // Presentation JavaScript
 
-// Initialize reveal.js with custom configuration
-Reveal.initialize({
+// Wait for DOM to load and then initialize reveal.js
+document.addEventListener('DOMContentLoaded', function() {
+    // Initialize reveal.js with custom configuration
+    Reveal.initialize({
     hash: true,
     transition: 'slide',
     transitionSpeed: 'default',
@@ -27,9 +29,9 @@ Reveal.initialize({
     previewLinks: false,
     focusBodyOnPageVisibilityChange: true,
 
-    // Slide numbering - keep only one system
-    slideNumber: 'c/t', // current/total format
-    showSlideNumber: 'all', // show on all slides
+    // Slide numbering - completely disabled
+    slideNumber: false, // disable all slide numbers
+    showSlideNumber: 'none', // don't show on any slides
 
     // Theme and view settings
     parallaxBackgroundImage: '',
@@ -58,7 +60,7 @@ Reveal.initialize({
     },
 
     // Learn about plugins: https://revealjs.com/plugins/
-    plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ],
+    plugins: [ RevealHighlight ],
 
     // On ready callback
     ready: function() {
@@ -567,3 +569,5 @@ document.addEventListener('keydown', function(event) {
         }
     }
 });
+
+}); // Close DOMContentLoaded function
