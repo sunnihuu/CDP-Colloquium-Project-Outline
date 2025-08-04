@@ -9,7 +9,7 @@ Reveal.initialize({
 
     // Presentation controls
     controls: true,
-    progress: true,
+    progress: false, // disable progress bar to avoid duplicate page indicators
     center: true,
     touch: true,
     loop: false,
@@ -26,6 +26,10 @@ Reveal.initialize({
     hideAddressBar: true,
     previewLinks: false,
     focusBodyOnPageVisibilityChange: true,
+
+    // Slide numbering - keep only one system
+    slideNumber: 'c/t', // current/total format
+    showSlideNumber: 'all', // show on all slides
 
     // Theme and view settings
     parallaxBackgroundImage: '',
@@ -60,6 +64,10 @@ Reveal.initialize({
     ready: function() {
         initializeIndexInteractions();
         setupFullScreenHandling();
+        
+        // Log the actual slide count
+        console.log('Total slides:', Reveal.getTotalSlides());
+        console.log('Horizontal slides:', Reveal.getHorizontalSlides().length);
     }
 });
 

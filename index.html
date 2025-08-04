@@ -20,18 +20,19 @@
     <div class="reveal">
         <div class="slides">
             <!-- Title Slide -->
-            <section>
+            <section data-menu-title="Title">
                 <div>
                     <p style="display: flex; align-items: center;">Columbia GSAP CDP &emsp; Summer 2025 Colloquium 1&emsp; Sunni Hu</p>
                 </div>
-                <h1>foodprint in NYC</h1>
+                <br><br><br>
+                <h1>Foodprint in NYC</h1>
                 <h2>How can we break the carbon-intensive cycles of<br>
                     urban food systems through data, system thinking,<br>
                     and computational design?</h2>
             </section>
 
             <!-- Index -->
-            <section class="index-slide">
+            <section class="index-slide" data-menu-title="Index">
                 <h2>Index</h2>
                 <div class="index-grid">
                     <ol class="index-list">
@@ -42,24 +43,24 @@
                         </li>
                         <li>Research Insights
                             <ol class="sub-list">
-                                <li>Climate–Food System Loop</li>
+                                <li>Climate–Food System Cycle</li>
                                 <li>How Might We...?</li>
                             </ol>
                         </li>
                         <li>Project Overview
                         </li>
-                        <li>Part 1: Data Visualization 
+                        <li>Part 1: Making Visible
                             <ol class="sub-list">
-                                <li>Visual Communication</li>
-                                <li>Usage Scenarios</li>
-                                <li>Computational Process</li>
+                                <li>Visual Strategies</li>
+                                <li>Use Cases & Audiences</li>
+                                <li>Computational Framework</li>
                             </ol>
                         </li>
 
-                        <li>Part 2: Intervening in the Urban Food Chain
+                        <li>Part 2: Making Actionable
                             <ol class="sub-list">
-                                <li>Case Studies</li>
-                                <li>Personas</li>
+                                <li>Precedents</li>
+                                <li>User Personas & Needs</li>
                                 <li>Future Directions</li>
                             </ol>
                         </li>
@@ -69,18 +70,15 @@
             </section>
 
             <!-- Precedent Study: OEC -->
-            <section>
-                <section class="image-slide" data-background-color="#fff5db">
+            <section data-menu-title="1. Precedent Study">
+                <section class="image-slide" data-background-color="#fff5db" data-menu-title="Observatory of Economic Complexity">
                     <div class="image-container" id="imageContainer">
-                        <img src="images/oec/Final.png" alt="Precedent Study - Observatory of Economic Complexity" id="precedentImage" class="zoomable-image">
-                        <div class="image-controls">
-                            <span class="control-hint">Scroll to zoom • Drag to pan • Press F for fullscreen</span>
-                        </div>
+                        <img src="images/oec/Final.png" alt="Precedent Study - Observatory of Economic Complexity" id="precedentImage" class="zoomable-image">s
                     </div>
                 </section>
                 
                 <!-- Sub-page for Precedent Study -->
-                <section>
+                <section data-menu-title="Initial Idea">
                     <h2>Initial Idea</h2>
                     <h1>How Does Food Travel and Transform?</h1>
                     <h2 style="font-size: 25px;">"The delicious rice noodles we are familiar with today, the beef pho with mint, cilantro, Thai basil, lime, and chili, each step
@@ -89,8 +87,8 @@
             </section>
 
             <!-- NYC Food System -->
-            <section>
-                <section>
+            <section data-menu-title="2. Research Insights">
+                <section data-menu-title="Rising Household Food Costs">
                     <div class="flex-container">
                         <div class="flex-content">
                             <h2 class="green-text">Rising Household Food Costs</h2>
@@ -108,7 +106,7 @@
                 </section>
 
                 <!-- Sub-page for NYC Food System -->
-                <section>
+                <section data-menu-title="Food Deserts in NYC">
                     <div class="flex-container">
                         <div class="flex-content">
                             <h2 class="green-text">Food Deserts in NYC</h2>
@@ -125,7 +123,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section data-menu-title="Food Insecurity & Supply Gaps">
                     <div class="flex-container">
                         <div class="flex-content">
                             <h2 class="green-text">Food Insecurity & Supply Gaps</h2>
@@ -145,8 +143,8 @@
             
 
             <!-- Climate and Food -->
-            <section>
-                <section>
+            <section data-menu-title="Climate-Food Feedback Loop">
+                <section data-menu-title="A Global Challenge">
                     <div class="flex-container">
                         <div class="flex-content">
                             <h2 class="green-text">A Global Challenge</h2>
@@ -164,7 +162,7 @@
                 </section>
 
                 <!-- Subpage for Climate and Food -->
-                <section>
+                <section data-menu-title="Food → Climate">
                     <div class="flex-container gap-40">
                         <div class="flex-content">
                             <h2 class="green-text mb-20">Food → Climate</h2>
@@ -184,7 +182,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section data-menu-title="Climate → Food">
                     <div class="flex-container">
                         <div class="flex-content">
                             <h2 class="green-text mb-20">Climate → Food</h2>
@@ -205,8 +203,8 @@
     
 
             <!-- foodprint -->
-            <section>
-                <section>
+            <section data-menu-title="foodprint">
+                <section data-menu-title="Definition">
                     <div class="flex-container gap-40">
                         <div class="flex-content">
                             <h2 class="green-text mb-20">foodprint</h2>
@@ -223,7 +221,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section data-menu-title="A Major Urban Impact">
                     <div class="flex-container gap-40">
                         <div>
                             <h2>A Major Urban Impact</h2>
@@ -246,8 +244,8 @@
 
 
             <!-- Climate-Food Feedback Loop Visualization -->
-            <section>
-                <section>
+            <section data-menu-title="Climate-Food System Loop">
+                <section data-menu-title="Visualization">
                     <div id="viz" class="viz-container"></div>
                     <script type="module">
                         import { createVisualization } from './js/d3-visualization.js';
@@ -256,7 +254,7 @@
                 </section>
 
                 <!-- How Might We -->
-                <section>
+                <section data-menu-title="How Might We...?">
                     <div>
                         <h2>How Might We...</h2>
                         <h3 style="line-height: 1.5;"> 
@@ -269,8 +267,8 @@
             </section>
 
             <!-- Part 1: Project Overview & Data Visualization -->
-            <section>
-             <section>
+            <section data-menu-title="4. Part 1: Data Visualization">
+             <section data-menu-title="Visual Communication">
                 <div class="flex-container">
                     <div class="flex-content">
                         <h2 class="green-text">Part 1: Data Visualization</h2>
@@ -289,7 +287,7 @@
                 </div>
             </section>
 
-            <section>
+            <section data-menu-title="Visual Examples">
                 <div class="flex-container" style="gap: 20px; justify-content: center; align-items: center; width: 100%; margin: 0 auto; padding: 0 20px;">
                     <div class="flex-image" style="flex: 1; text-align: center;">
                         <a href="https://www.nytimes.com/interactive/2024/01/22/dining/restaurant-menu-trends.html" target="_blank" rel="noopener noreferrer">
@@ -349,7 +347,7 @@
                 </div>
             </section>
 
-            <section class="index-slide">
+            <section class="index-slide" data-menu-title="Usage Scenarios">
                 <h2 class="green-text">Part 1: Usage Scenarios</h2>
                 <div class="index-grid">
                     <ol class="index-list">
@@ -375,7 +373,7 @@
                 </div>
             </section>
 
-            <section class="index-slide">
+            <section class="index-slide" data-menu-title="Data Sources">
                 <h2 class="green-text">Part 1: Data Sources</h2>
                 <div class="index-grid">
                     <ol class="index-list">
@@ -414,7 +412,7 @@
                 </div>
             </section>
 
-            <section class="index-slide">
+            <section class="index-slide" data-menu-title="Computational Process">
                 <h2 class="green-text">Part 1: Computational Process</h2>
                 <div class="index-grid">
                     <ol class="index-list">
@@ -449,8 +447,8 @@
             </section>
 
             <!-- Part 2: Intervening in the Urban Food Chain -->
-            <section>
-                <section>
+            <section data-menu-title="5. Part 2: Intervening in the Urban Food Chain">
+                <section data-menu-title="Points of Intervention">
                         <div class="flex-content">
                             <h2 class="green-text">Part 2: Points of Intervention</h2>
                             <h3 class="green-text" style="line-height: 1.4;">How can design translate awareness into action to reduce the foodprint of everyday urban life?</h3>
@@ -475,7 +473,25 @@
                     </div>
                 </section>
 
-                <section>
+                <section data-menu-title="Too Good To Go">
+                    <div class="flex-container" style="gap: 30px; justify-content: center; align-items: center; width: 100%; max-width: 900px; margin: 0 auto; padding: 40px;">
+                        <div style="text-align: center;">
+                            <a href="https://toogoodtogo.com/" target="_blank" rel="noopener noreferrer">
+                                <img src="images/examples/toogood.gif" 
+                                     alt="Too Good To Go app interface showing food rescue functionality" 
+                                     class="responsive-image" 
+                                     style="width: 100%; max-width: 800px; height: auto; object-fit: cover; padding: 0; border-radius: 12px; margin: 0; box-shadow: 0 4px 12px rgba(0,0,0,0.1);">
+                            </a>
+                            <div style="margin-top: 15px;">
+                                <p class="caption caption-large" style="margin: 0; font-weight: 600; color: #296307;">
+                                    Too Good To Go
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section data-menu-title="One Love Community Fridge">
                     <div class="flex-container" style="gap: 30px; justify-content: center; align-items: center; width: 100%; max-width: 900px; margin: 0 auto; padding: 40px;">
                         <div style="text-align: center;">
                             <a href="https://www.onelovecommunityfridge.org/" target="_blank" rel="noopener noreferrer">
@@ -493,7 +509,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section data-menu-title="Imperfect Foods">
                     <div class="flex-container" style="gap: 30px; justify-content: center; align-items: center; width: 100%; max-width: 900px; margin: 0 auto; padding: 40px;">
                         <div style="text-align: center;">
                             <a href="https://www.imperfectfoods.com/our-food" target="_blank" rel="noopener noreferrer">
@@ -511,7 +527,7 @@
                     </div>
                 </section>
 
-                <section>
+                <section data-menu-title="Klimato">
                     <div class="flex-container" style="gap: 30px; justify-content: center; align-items: center; width: 100%; max-width: 900px; margin: 0 auto; padding: 40px;">
                         <div style="text-align: center;">
                             <a href="https://klimato.com/" target="_blank" rel="noopener noreferrer">
@@ -531,7 +547,7 @@
 
 
                 <!-- Persona 1: Health-Motivated Explorer -->
-                <section>
+                <section data-menu-title="The Health-Motivated Explorer">
                     <div style="text-align: left; max-width: 1000px; margin: 0 auto; padding: 60px 40px;">
                         <div style="background: #f8f9fa; padding: 40px; border-radius: 12px; border-left: 4px solid #296307;">
                             <h2 style="color: #296307; margin-bottom: 30px; text-align: center;">• The Health-Motivated Explorer</h2>
@@ -566,7 +582,7 @@
                 </section>
 
                 <!-- Persona 2: Independent Restaurateur -->
-                <section>
+                <section data-menu-title="The Independent Restaurateur">
                     <div style="text-align: left; max-width: 1000px; margin: 0 auto; padding: 60px 40px;">
                         <div style="background: #f8f9fa; padding: 40px; border-radius: 12px; border-left: 4px solid #296307;">
                             <h2 style="color: #296307; margin-bottom: 30px; text-align: center;">• The Independent Restaurateur</h2>
@@ -601,7 +617,7 @@
                 </section>
 
                 <!-- Persona 3: Budget-Conscious Community Member -->
-                <section>
+                <section data-menu-title="The Budget-Conscious Community Member">
                     <div style="text-align: left; max-width: 1000px; margin: 0 auto; padding: 60px 40px;">
                         <div style="background: #f8f9fa; padding: 40px; border-radius: 12px; border-left: 4px solid #296307;">
                             <h2 style="color: #296307; margin-bottom: 30px; text-align: center;">• The Budget-Conscious Community Member</h2>
@@ -634,7 +650,7 @@
                         </div>
                     </div>
                 </section>
-                <section>
+                <section data-menu-title="Future Directions">
                     <h2>Future Directions</h2>
                     <h3 style="line-height: 1.5;"> 
                         • Footprint Wallet + Emission Map<br>
@@ -645,7 +661,7 @@
             </section>
             
             <!-- Key Challenges -->
-            <section>
+            <section data-menu-title="6. Key Challenges">
                 <div>
                     <h2>Key Challenges</h2>
                     <h3 style="line-height: 1.5;"> 
@@ -661,14 +677,14 @@
             </section>
 
 
-            <section>
+            <section data-menu-title="Food Security Quote">
                     <div class="flex-container">
                         <h3 class="green-text">"Food security exists when all people, at all times, have physical and economic access to sufficient, safe and nutritious food that meets their dietary needs and food preferences for an active and healthy life"&nbsp;&nbsp;&nbsp;(World Food Summit, 1996)</h3>
                     </div>
             </section>
 
             <!-- Closing -->
-            <section>
+            <section data-menu-title="Thank You">
                 <h1>Thank you!</h1>
             </section>
         </div>
