@@ -303,13 +303,19 @@
                         • Urban Data Analysis
                     </h3>
             </section>
+        
                 <section>
-                    <div>
-                        <h2>Community of Practice</h2>
-                        <h3 style="line-height: 1.5;"> 
-                            • 1111
-                        </h3>
-                    </div>
+                  <div id="community-tree-viz" class="viz-container"></div>
+                  <script type="module">
+                    import { drawCommunityTree } from './community/community_tree_module.js';
+                    drawCommunityTree({
+                      containerId: 'community-tree-viz',
+                      jsonPath: './community/community_of_practice_cluster_tree_v2.json',
+                      width: 1000,
+                      height: 800,
+                      enableZoom: true
+                    });
+                  </script>
                 </section>
             </section>
 
@@ -611,7 +617,7 @@
             <!-- New Page After Thank You -->
             <section class="image-slide" data-background-color="#fff5db">
                 <div class="image-container">
-                            <img src="images/examples/drawing type draft.jpg" alt="Drawing Type Draft" class="zoomable-image">
+                    <img src="images/Final 17.37.48.png" alt="Final project drawing draft" class="zoomable-image responsive-image" style="max-width:100%;height:auto;display:block;margin:0 auto;">
                 </div>
             </section>
             </section>
