@@ -121,26 +121,30 @@ const treeData = {
 
 
 // D3 collapsible tree logic (abbreviated)
-const width = 1000;
-const dx = 10;
-const dy = width / 6;
-const margin = {top: 10, right: 120, bottom: 10, left: 40};
+
+// Layout and style refinements
+const width = 1500;
+const dx = 32; // vertical node spacing
+const dy = 220; // horizontal node spacing
+const margin = {top: 40, right: 180, bottom: 40, left: 80};
 const diagonal = d3.linkHorizontal().x(d => d.y).y(d => d.x);
 const tree = d3.tree().nodeSize([dx, dy]);
 const root = d3.hierarchy(treeData);
-root.x0 = dy / 2;
-root.y0 = 0;
+root.x0 = 0;
+root.y0 = margin.left;
 root.descendants().forEach((d, i) => d.id = i);
-const svg = d3.select("#tree-container").append("svg")
-  .attr("width", width).attr("height", 800)
-  .attr("viewBox", [-margin.left, -margin.top, width, dx])
-  .style("font", "10px sans-serif").style("user-select", "none");
 
-// Collapse
+const svg = d3.select("#tree-container").append("svg")
+  .attr("width", width)
+  .attr("height", 800)
+  .style("font", "16px 'Plus Jakarta Sans', 'Noto Serif', Arial, sans-serif")
+  .style("user-select", "none");
+
+// Collapse all children initially
 root.children.forEach(d => { d._children = d.children; d.children = null; });
 
 function update(source) {
-  const duration = 250;
+  const duration = 400;
   const nodes = root.descendants().reverse();
   const links = root.links();
   tree(root);
@@ -151,45 +155,69 @@ function update(source) {
     if (n.x > right.x) right = n;
   });
   const height = right.x - left.x + margin.top + margin.bottom;
-  const transition = svg.transition().duration(duration)
-    .attr("viewBox", [-margin.left, left.x - margin.top, width, height]);
+  svg.transition().duration(duration)
+    .attr("height", height)
+    .attr("viewBox", [0, left.x - margin.top, width, height]);
 
+  // Nodes
   const node = svg.selectAll("g.node").data(nodes, d => d.id);
   const nodeEnter = node.enter().append("g")
     .attr("class", "node")
     .attr("transform", d => `translate(${source.y0},${source.x0})`)
     .on("click", (event, d) => { d.children = d.children ? null : d._children; update(d); });
 
-  nodeEnter.append("circle").attr("r", 4)
-    .attr("fill", d => d._children ? "#555" : "#69b3a2");
+  nodeEnter.append("circle")
+    .attr("r", 10)
+    .attr("fill", d => d._children ? "#b5c99a" : "#296307")
+    .attr("stroke", "#b5c99a")
+    .attr("stroke-width", 2.5)
+    .style("cursor", d => d._children ? "pointer" : "default");
 
   nodeEnter.append("text")
-    .attr("dy", "0.31em").attr("x", d => d._children ? -6 : 6)
+    .attr("dy", "0.32em")
+    .attr("x", d => d._children ? -18 : 18)
     .attr("text-anchor", d => d._children ? "end" : "start")
     .text(d => d.data.name)
+    .style("font-size", "1.1em")
+    .style("font-weight", d => d.depth === 0 ? 700 : 400)
+    .style("fill", d => d.data.link ? "#1a6" : "#222")
+    .style("cursor", d => d.data.link ? "pointer" : "default")
     .on("click", (event, d) => {
       event.stopPropagation();
       if (d.data.link) window.open(d.data.link, "_blank");
     });
 
-  const nodeUpdate = nodeEnter.merge(node)
-    .transition(transition)
+  // Animate node position
+  nodeEnter.merge(node)
+    .transition().duration(duration)
     .attr("transform", d => `translate(${d.y},${d.x})`);
 
+  node.exit().transition().duration(duration)
+    .attr("transform", d => `translate(${source.y},${source.x})`)
+    .remove();
+
+  // Links
   const link = svg.selectAll("path.link").data(links, d => d.target.id);
   const linkEnter = link.enter().insert("path", "g")
     .attr("class", "link")
     .attr("d", d => {
       const o = {x: source.x0, y: source.y0};
       return diagonal({source: o, target: o});
-    });
+    })
+    .attr("stroke", "#b5c99a")
+    .attr("stroke-width", 2.5)
+    .attr("fill", "none");
 
-  link.merge(linkEnter).transition(transition).attr("d", diagonal);
-  link.exit().transition(transition).remove()
+  link.merge(linkEnter).transition().duration(duration)
+    .attr("d", diagonal)
+    .attr("stroke", "#b5c99a");
+
+  link.exit().transition().duration(duration)
     .attr("d", d => {
       const o = {x: source.x, y: source.y};
       return diagonal({source: o, target: o});
-    });
+    })
+    .remove();
 
   root.eachBefore(d => {
     d.x0 = d.x;
