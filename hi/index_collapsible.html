@@ -1,0 +1,21 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Collapsible Community Tree</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body { margin: 0; padding: 0; font-family: sans-serif; }
+    .viz-container { width: 1000px; height: 800px; margin: 40px auto; }
+    .node circle { fill: #69b3a2; cursor: pointer; }
+    .node text { font-size: 12px; cursor: pointer; }
+    .link { fill: none; stroke: #ccc; stroke-width: 1.5px; }
+  </style>
+</head>
+<body>
+  <div id="tree-container" class="viz-container"></div>
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="collapsible_tree_inline.js"></script>
+</body>
+</html>
